@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+## vim: set tabstop=4 shiftwidth=4 autoindent expandtab smartindent:
+##---------------------------------------------------------
+## CAPTAIN  SLOG
+##---------------------------------------------------------
+##
+##  FILE:       index.html 
+##  SYSTEM:    
+##  AUTHOR:     Mark Addinall
+##  DATE:       22/02/2016
+##  SYNOPSIS:   Front page/Landing page for the new system. 
+##              This page will drive the system regardless of
+##              it behaving as the outfacing landing page,
+##              data entry sub-system, reporting subsystem,
+##              or whatever we dream up next.
+##             
+##              Responsive from the ground up, but the
+##              brief is to make it work on older browsers as well.
+##                     
+-->
+
+<!--#include file="head.html" -->
+
+    <body role="document" id="page-top">
+
+<!--#include file="menu.html" -->
+
+    <section id="landing" class="landing-section">
+        <div class="container-fluid" role="main">
+            <div id="landing-page-slider" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#landing-page-slider" data-slide-to="0" class="active"></li>
+                    <li data-target="#landing-page-slider" data-slide-to="1"></li>
+                    <li data-target="#landing-page-slider" data-slide-to="2"></li>
+                    <li data-target="#landing-page-slider" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    
+                    <div class="item active">
+                        <div style="background:url(img/med-pers1.jpg) center center;
+                            background-size:cover;" class="slider-size">
+                            <div class="carousel-caption">
+                                <h1>Emergency Services Management</h1>
+                                <h3>Executives working in the emergency services management field generally oversee an area’s emergency operations center and lead the response before, during and after emergencies. These individuals work with all sectors of government, including police, fire, rescue and hospitals</h3>
+                                <a id="landing_page_one" type="button" class="btn btn-primary-outline btn-primary-tit-trans page-scroll" href="#survey">FIND OUT MORE!</a><br><br>
+                                <a id="landing_page_one" type="button" class="btn btn-primary btn-primary-tit page-scroll" href="#info">CONTACT THE AUTHOR, MARK</a>
+                            </div> <!-- /carousel-caption -->
+                        </div> <!-- /background style -->
+                    </div> <!-- /item -->
+
+                    <div class="item">
+                        <div style="background:url(img/bio1.jpg) center center;
+                            background-size:cover;" class="slider-size">
+                            <div class="carousel-caption">
+                                <h1>Patient Management</h1>
+                                <h3>Some types of patient management activities are being taken over by computer software. With advanced information technology, patient management systems are implemented in doctors offices to help medical staff keep track of patient appointments, medication lists and financial information. </h3>
+                                <a id="landing_page_one" type="button" class="btn btn-primary-outline btn-primary-tit-trans page-scroll" href="#survey">FIND OUT MORE!</a><br><br>
+                                <a id="landing_page_one" type="button" class="btn btn-primary btn-primary-tit page-scroll" href="#info">CONTACT THE AUTHOR, MARK</a>
+                            </div> <!-- /carousel-caption -->
+                        </div> <!-- /background style -->
+                    </div> <!-- /item -->
+
+                </div> <!-- /carousel inner -->
+            
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#landing-page-slider" role="button" data-slide="prev">
+                    <span class="fa fa-caret-square-o-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#landing-page-slider" role="button" data-slide="next">
+                    <span class="fa fa-caret-square-o-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+
+            </div>  <!-- /landing-page-slider-->
+            <div id="landing-page-telephone">
+                <h1>HELLO TELEPHONE!</h1>
+            </div>  <!-- landing-page-telephone -->
+
+
+        <h1>MAIN SECTION</h1>
+        This is just normal text not wrapped with anything.  The text size should, I say SHOULD, be responsive.
+        I wonder why the H1 defined as 2.5 em are not?????
+        </div> <!-- /container -->
+    </section>  <!-- /landing -->
+
+    <!-- This is a one page application.  The rest of the 'pages' are described from here on as 'sections'.
+         navigation will be smooth scrolling from section to section. -->
+
+
+    <section id="info" class="info-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-6">
+                    <h1>INFO SECTION</h1>
+                </div>  <!-- /col-xs-6 -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container-fluid -->
+    </section>
+
+
+
+    <section id="survey" class="survey-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-6">
+                    <h1>SURVEY SECTION</h1>
+                </div>  <!-- /col-xs-6 -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container-fluid -->
+    </section>
+
+
+  </body>
+</html>

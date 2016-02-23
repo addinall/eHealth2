@@ -1,0 +1,80 @@
+<!--
+## vim: set tabstop=4 shiftwidth=4 autoindent expandtab smartindent:
+##---------------------------------------------------------
+## CAPTAIN  SLOG
+##---------------------------------------------------------
+##
+##  FILE:       menu.html 
+##  SYSTEM:   
+##  AUTHOR:     Mark Addinall
+##  DATE:       22/02/2016
+##  SYNOPSIS:   This is the main menu system for the landing page, 
+##              portal and outward facing pages.
+##              The menu structure is modified with javascript
+##              in app.js depending on the login status of the user
+##              and the ROLE the user has associated with his/her
+##              account.
+-->
+
+<!--#include file="login-modal.html" -->
+<!--#include file="register-modal.html" -->
+
+   <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="#" class="pull-left"><img src="img/logo.png" class="img-responsive inline"></a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            <li><a  href="#page-top">HOME</a></li>
+            <li><a  href="#about">ABOUT</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CLINICAL<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">ER Management</a></li>
+                <li><a href="#">OR Management</a></li>
+                <li><a href="#">Ward Management</a></li>
+                <li><a href="#">Lab Management</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">RESEARCH<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+              </ul>
+            </li>
+            <li id="admin-dropdown" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ADMIN<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Networks</a></li>
+                <li><a href="#">Organisations</a></li>
+                <li><a href="#">Administrators</a></li>
+                <li><a href="#">Operators</a></li>
+                <li><a href="#">Contacts</a></li>
+                <li><a href="#">Surveys</a></li>
+                <li><a href="#">Questionnaires</a></li>
+                <li><a href="#">Data Entry</a></li>
+                <li><a href="#">Reports</a></li>
+              </ul>
+            </li>
+            <li><a  href="#contact">CONTACT</a></li>
+            <li id="login"><a data-toggle="modal" href="#login-overlay">LOGIN</a></li>
+            <li id="logout" class="hidden"><a data-toggle="modal" href="#login-overlay">LOGOUT</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+

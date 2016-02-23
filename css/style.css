@@ -1,0 +1,379 @@
+/*
+## vim: set tabstop=4 shiftwidth=4 autoindent expandtab:
+##---------------------------------------------------------
+## CAPTAIN  SLOG
+##---------------------------------------------------------
+##
+##  FILE:       style.css  
+##  SYSTEM:  
+##  AUTHOR:     Mark Addinall
+##  DATE:       22/02/2016
+##  SYNOPSIS:   This file contains our custom over rides 
+##              for our version of the Bootstrap theme.
+##              This file CAN contain brand new custom
+##              CSS declarations, however, they should 
+##              probably live in style.css
+##             
+
+
+Name            %       RGB                 HEX
+---------------------------------------------------
+TIT-Green       100     0   101 128         #006580
+TIT-Green-50     50     128 178 192         #80B2C0
+TIT-Green-25     25     191 217 223         #BFD9DF
+TIT-Green-15     15     217 232 236         #D9E8EC
+
+TIT-Navy        100      20  53 115         #1E3557
+TIT-Navy-50      50     143 154 171         #8F9AAB
+TIT-Navy-25      25     199 205 213         #C7CDD5
+TIT-Navy-15      15     221 225 230         #DDE1E6
+
+TIT-Red         100     170   1  20  
+TIT-Red-50       50     194 148 157         #C2949D
+TIT-Red-25       25     224 202 206         #E0CACE
+TIT-Red-15       15     237 223 226         #EDDFE2    
+
+TIT-Charcoal    100      55  52  45         #37342D
+TIT-Charcoal-50  50     155 154 150         #9B9A96
+TIT-Charcoal-25  25     205 204 203         #CDCCCB
+TIT-Charcoal-15  15      55  52  45         #37342D
+
+TIT-Stone       100     181 179 171         #B5B3AB
+TIT-Stone-50     50     218 217 213         #DAD9D5
+TIT-Stone-25     25     237 236 234         #EDECEA
+TIT-Stone-15     15     244 244 242         #F4F4F2
+
+*/          
+
+
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  height: 100%;
+  padding-top: 70px;
+  padding-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.9em;
+    font-weight:500;
+}
+
+h2 {
+    font-size: 2.2em;
+    font-weight:bold;
+}
+
+h3 {
+    font-size: 1.8em;
+    font-weight:500;
+}
+
+h4 {
+    font-size: 1.6em;
+}
+
+h5 {
+    font-size: 1.3em;
+}
+
+
+
+.theme-dropdown .dropdown-menu {
+  position: static;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.theme-showcase > p > .btn {
+  margin: 5px 0;
+}
+
+.theme-showcase .navbar .container {
+  width: auto;
+}
+
+
+.hidden {
+    visibility: none;
+}
+
+
+.that-it-text {
+    text-align: justify;
+}
+
+/* -------    colours -----------------------------------*/
+
+.tit-green {
+    color: rgb(0,101,128);
+}
+
+
+
+.tit-navy {
+    color: rgb(30,53,87);
+}
+
+
+
+
+.tit-red {
+    color: rgb(132,41,59);
+}
+
+
+
+.tit-charcoal {
+    color: rgb(55,52,45);
+}
+
+
+.tit-stone {
+    color: rgb(181,170,171);
+}
+
+
+.dark-blue {
+    color: MidnightBlue;
+}
+
+.blue {
+    color: blue;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+
+
+/* --------- end colours --------------------------*/
+
+/*  The jumbotron and contact page stuff MAY become obsolete
+    as the new design has moved away from a columnar format
+    to a sliding, single-page, full page format.
+    HOWEVER, that architecture looks dicky on an iPhone
+    so we may need a more traditional structure in place
+    for when media-query reports a small mobile device. */
+
+.jumbotron>h1 {
+    color: #373442D;
+}
+
+.jumbotron {
+    background-color: #BFD9DF;
+    border-radius: 12px;
+    border: solid 2px #37342D;
+}
+
+
+#contact_well, #contact_blurb {
+    background-color: #DAD9D5; 
+    background-image: none;
+}
+
+
+/* ------------------------------------------------*/
+
+.modal-header, h4, .close {
+    background-color: #8F9AAB; 
+    color: white !important;
+    text-align: center;
+    font-size: 2em;
+}
+
+
+
+.that-it-footer {
+    color: #37342D;
+    background-color: #C7CDD5;
+    border: solid 2px #37242D;
+    border-radius: 6px;
+    padding-top: 2em;
+}
+
+/*  kill the text are resizing on ALL of them.  Dunno why ON is still
+    the default.  makes no sense at all. */
+
+textarea {
+    resize: none;
+}
+
+
+.nav>li>a {
+    padding: 10px 10px;
+    font-size: 1.1em;
+    font-weight:600;
+}
+
+/*
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 100%;
+    margin: auto;
+}
+*/
+
+
+.slider-size {
+    height: 800px;
+}
+
+.carousel {
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.btn-primary-tit,
+.btn-primary-tit-trans {
+    background-image: none;
+    background-color: rgba(191, 217, 223,0.8);
+    color: black;
+    padding: none;
+    margin: auto;
+    text-align: center;
+    vertical-align: center;
+    font-size: 1.3em;
+    width: 50%;
+    height: 60px;
+    border-radius: 10px;
+    border: solid 1px #37342D;
+    white-space: normal;
+}
+
+.btn-primary-tit:hover {
+    background-color: rgba(217, 232, 236,0.8);
+    color: black;
+}
+
+
+.btn-primary-tit-trans {
+    background-color: rgba(181,179,171,0.8);
+}
+
+
+.btn-primary-tit-trans:hover {
+    background-color: rgba(237,236,234,0.8);
+}
+
+#logo {
+    float: left;
+}
+
+.navbar {
+    min-height: 100px;
+    padding-top: 18px;
+    padding-bottom: 2px;
+}
+
+.carousel-indicators .active {
+    background-color: #80B2C0
+}
+
+.carousel-indicators li {
+    border: 1px solid #80B2C0;
+}
+
+
+.img-round {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */    
+   -webkit-filter: grayscale(100%);
+   -moz-filter: grayscale(100%);
+   -ms-filter: grayscale(100%);
+   filter: grayscale(100%);
+   filter: gray; /* IE 6-9 */
+}
+
+.img-round:hover {
+   -webkit-filter: none;
+   -moz-filter: none;
+   -ms-filter: none;
+   filter: none;
+}
+
+
+.nav {
+    float: right;
+}
+
+
+.carousel-caption {
+
+    width: 58%;
+    height: 96%;
+    left: 15%;
+    color: #37342D;
+    text-align: left;
+    text-shadow: none;
+    display: table;
+}
+
+.table-foot {
+    display: table-row;
+    vertical-align: bottom;
+    height: 20px;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 90%;
+    margin: auto;
+}
+
+/*  this div is just in case we need to design a whole other
+    visual architecture on teeny devices.  Initially hidden.  */
+
+
+#landing-page-telephone {
+    display: none;
+}
+
+
+
+
+@media only screen and (max-width:767px){}
+    body {
+            font-size: 9px;
+    }
+}
+
+@media only screen and (min-width:768px){
+    body {
+            font-size: 12px;
+    }
+}
+
+@media only screen and (min-width:992px){}
+    body {
+            font-size: 14px;
+    }
+}
+
+@media only screen and (min-width:1200px){}
+
+
+
+.landing-section {
+}
+
+
+.info-section {
+}
+
+
+.about-section {
+}
+
+
+.survey-section {
+}
+
+
+

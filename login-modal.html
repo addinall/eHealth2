@@ -1,0 +1,71 @@
+<!--
+## vim: set tabstop=4 shiftwidth=4 autoindent expandtab:
+## usually for looks.  MORE important in Python, keeps the indents sane...
+##---------------------------------------------------------
+## CAPTAIN  SLOG
+##---------------------------------------------------------
+##
+##  FILE:       login-modal.html  
+##  SYSTEM:   
+##  AUTHOR:     Mark Addinall
+##  DATE:       22/02/2016
+##  SYNOPSIS:   A login/register form in a modal 
+##              dialogue format.  Talks to the back
+##              end via AJaX(J)
+##             
+-->            
+
+<div id="login-overlay" class="modal fade" data-backdrop="" role="dialog">
+ <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+              <h4 class="modal-title" id="myModalLabel"><span class="fa fa-unlock"></span> Login</h4>
+          </div>
+          <div class="modal-body">
+              <div class="row">
+                  <div class="col-xs-6">
+                      <div class="well">
+                          <form id="login_form" method="POST" action="#" class="bpa-ajax-form">
+                              <input type="hidden" id="type" name="type" value="user">
+                              <input type="hidden" id="method" name="method" value="login">
+
+                              <div class="form-group">
+                                  <label for="email" class="control-label">Username (email address)</label>
+                                  <input type="text" class="form-control" id="email" name="email" value="" required title="Please enter you username" placeholder="example@gmail.com">
+                                  <span class="help-block"></span>
+                              </div>
+                              <div class="form-group">
+                                  <label for="pw" class="control-label">Password</label>
+                                  <input type="password" class="form-control" id="pw" name="pw" value="" required title="Please enter your password">
+                                  <span class="help-block"></span>
+                              </div>
+                              <div id="login_error_msg" class="alert alert-error hide">Wrong username or password</div>
+                              <div class="checkbox">
+                                  <label>
+                                      <input type="checkbox" name="remember" id="remember"> Remember login
+                                  </label>
+                                  <p class="help-block">(if this is a private computer)</p>
+                              </div>
+                              <button type="submit" class="btn btn-success btn-block">Login</button>
+                          </form>
+                      </div>
+                  </div>
+                  <div class="col-xs-6">
+                      <p class="lead">Or <span class="text-success">Register</span> now.</p>
+                      <ul class="list-unstyled" style="line-height: 2">
+                          <li><span class="fa fa-check text-success"></span> See all your Survey reports</li>
+                          <li><span class="fa fa-check text-success"></span> Fast re-order</li>
+                          <li><span class="fa fa-check text-success"></span> Save your favorites</li>
+                          <li><span class="fa fa-check text-success"></span> Fast checkout</li>
+                          <li><span class="fa fa-check text-success"></span> Get a quote <small>(new and valued customers)</small></li>
+                          <li><a href="contact.html"><u>Contact Page</u></a></li>
+                      </ul>
+                      <p><a data-toggle="modal" data-dismiss="modal" href="#register" class="btn btn-info btn-block">Yes please, register now!</a></p>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+

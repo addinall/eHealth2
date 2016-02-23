@@ -1,0 +1,20 @@
+/*
+## vim: set tabstop=4 shiftwidth=4 autoindent expandtab:
+## usually for looks.  MORE important in Python, keeps the indents sane...
+##---------------------------------------------------------
+## CAPTAIN  SLOG
+##---------------------------------------------------------
+##
+##  FILE:       custom.css  
+##  SYSTEM:  
+##  AUTHOR:     Mark Addinall
+##  DATE:       04/02/2016
+##  SYNOPSIS:   This file contains our custom over rides 
+##              for our version of the Bootstrap theme.
+##              This file CAN contain brand new custom
+##              CSS declarations, however, they should 
+##              probably live in style.css
+##             
+##              ALL moved into style.css 
+*/          
+
