@@ -271,7 +271,7 @@ private $shared_secret;
 // function __construct($usr, $pass, $db, $host, $dbtype, $strm, $rdir, $css, $errl, $errlev, $google, $os)
 $configuration = New Config('root',                     // database username
                             'S0laris7.1',               // database password for the CMS
-                            'best_practice',            // database name, qualified
+                            'emergency',                // database name, qualified
                             'localhost',                // local host does it for 90% of installs
                             'mySQL',                    // mySQL, MS-SQL, ORACLE, DB2, PostgreSQL so far. Mongo added
                                                         // to use Amazon Web Services (the CLOUD).  These 'new'

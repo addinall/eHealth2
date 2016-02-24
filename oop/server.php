@@ -227,7 +227,7 @@ class restServer {
                 // this is just a little test quickly to see if all the
                 // elements are playing nicely together
                 $this->database->log_config->trace("GOING TO SELECT .......");
-                $this->database->execute('SELECT * from best_practice.administrators LIMIT 10;');
+                $this->database->execute('SELECT * from administrators LIMIT 10;');
                 $this->database->log_config->trace("AFTER SELECT, GOING TO FETCH.......");
                 $db_result = $this->database->fetch_all();
                 $this->response['data'] = $db_result->get_stack();
