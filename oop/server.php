@@ -8,11 +8,7 @@
 //  SYSTEM:    
 //  AUTHOR:     Mark Addinall
 //  DATE:       22/02/2016
-//  SYNOPSIS:   This is part of the new system "proof of concept" 
-//              trials.  We are looking at a couple of different
-//              technologies to implement the new system.
-//             
-//              This program will form the RESTful server
+//  SYNOPSIS:   This program will form the RESTful server
 //              handleing data to and from the client.
 //
 //              Instead of _GET and _POST we will use the

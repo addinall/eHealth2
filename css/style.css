@@ -51,7 +51,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   height: 100%;
-  padding-top: 70px;
+  padding-top: 120px;
   padding-bottom: 30px;
 }
 
@@ -178,6 +178,12 @@ h5 {
     background-image: none;
 }
 
+.tit-well {
+    border-radius: 16px;
+    border: none;
+    background-image: none;
+    background-color: rgba(191, 217, 223, 0.5); 
+}
 
 /* ------------------------------------------------*/
 
@@ -212,17 +218,9 @@ textarea {
     font-weight:600;
 }
 
-/*
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-    width: 100%;
-    margin: auto;
-}
-*/
-
 
 .slider-size {
-    height: 800px;
+    height: 1000px;
 }
 
 .carousel {
@@ -313,6 +311,7 @@ textarea {
     text-align: left;
     text-shadow: none;
     display: table;
+    padding-bottom: 100px;
 }
 
 .table-foot {
@@ -323,7 +322,7 @@ textarea {
 
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
-    width: 90%;
+    width: 100%;
     margin: auto;
 }
 
