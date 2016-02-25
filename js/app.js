@@ -26,8 +26,21 @@
     // nice way, and doesn’t bloat your code with repetitive this and prototype declarations.
 
     //------------------------------
+    //------------------------------
     var thatsIT = (function() {
 
+        // if you look down the bottom of this design pattern you will see the functions
+        // we are making available to the outside world by declaring them in our
+        // return clause.  Everything else is PRIVATE and will trigger a runtime
+        // exception if an application coder tries to access and METHODS or PROPERTIES
+        // not defined as PUBLIC.
+        //
+        //      thatsIT.function_name(parameter_list, ...);
+        //
+        // this is about as secure as I can make the Javascript object model.
+        //
+        // We will use a little lightweight Angular in here, just for some
+        // deep two way binding.  Not the full Model.
 
         var session = {};
         session.role            = "UNDEFINED";                      // what is the role of the current user
@@ -40,13 +53,14 @@
 
         shared                  = {};                               // a shared memory block
                                                                     
-                                                                    // social media authentication
-        lock                    = new Auth0Lock('TgZy1CGIjbIBPs746UXEjYXJpGeWfx9L', 
-                                                    'addinall.au.auth0.com');
 
 
-        //-----------------------------------------
-        var __private_add_admin_menu = function() {
+        //-----------------------------------------                 
+        var __private_add_admin_menu = function() {                 
+
+            // if a user logs in, depending on the ROLE of the
+            // registered user, give them more and/or different
+            // menu options
 
             $("#admin-dropdown").toggleClass("hidden", false);
 
@@ -54,6 +68,10 @@
 
         //-----------------------------------------
         var __private_remove_admin_menu = function() {
+
+            // this happens when a staffie or SUPER-YOOSER
+            // logs out.  Remove dangerous stuff from the menu
+            // system.
 
             $("#admin-dropdown").toggleClass("hidden", true);
 
@@ -63,6 +81,9 @@
         //----------------------------------------
         var __private_toggle_logins = function() {
 
+            // if user is logged in, show LOGOUT on the menu bar
+            // if user is NOT logged in, show LOGIN on the menu bar
+            
             $("login").toggleClass("hidden");
             $("logout").toggleClass("hidden");
 
@@ -180,6 +201,14 @@
 
             // before we get carried away calling our API,
             // first do a client side validation of the form.
+            // we want to cycle through whatever form we are being
+            // fed and do some simple validation.  ie. if the
+            // input item is REQUIRED and it has been submitted
+            // empty, then BEEP and bugger orf.
+            //
+            // we can build in validation sophistication here if and when
+            // we need/want to.  'is the password strong enough',
+            // does the email conform to RFCxxxx?' cetra.
 
             $(form).each(function(){
                 //console.log(this);
@@ -201,12 +230,22 @@
                 session.current_task = 'login';
             } else if (packet.method == 'create' &&
                         packet.type == "user") {
-                session.current_task = 'register';
+                session.current_task = 'register';                          // user wants to join
+                if (data.password != data.conform_password) {               // check the form passwords
+                    alert("Passwords do not match.");                       // if they are not the same, bug out,
+                    return false;                                           // but keep the MODAL up!
+                }
+            } else if (packet.method == 'logout') {
+                session.role            = "UNDEFINED";                      // what is the role of the current user
+                session.logged_in       = false;                            // always assume no login
+                session.current_task    = "UNDEFINED";                      // what task are we performing RIGHT NOW
+                session.user_profile    = {};                               // who, what, where and when???
+                return true;                                                // make MODAL go away
             }
 
             packet.attributes  = data;                                      
+
             __private_getinfo();                                            // get client geo-location data 
-                                                                            // and merge it with form data
 
             __private_api();                                                // make an ajax request to the API
         }           
@@ -286,6 +325,8 @@ $(document).ready(function() {
     // indicate in the argument package the type of CRUD transaction
     // we request.
     //
+
+        alert('made it in here');
 
         event.preventDefault();                             // stop the normal submit actions
 
