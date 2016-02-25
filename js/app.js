@@ -75,7 +75,7 @@
             //console.log(packet);
 
             jqxhr = $.ajax({
-                url:            "localhost/server.php",                         // API code
+                url:            "oop/server.php",                               // API code
                 type:           "POST",                                         // ALL API calls are POST
                 dataType:       "json",                                         // JSON back at us please
                 data:           JSON.stringify(packet),                         // form data + security packet
@@ -199,20 +199,6 @@
 
             if (packet.method == 'login') {                                 // prime our session variables
                 session.current_task = 'login';
-                lock.show(function(err, profile, token) {
-                    if (err) {
-                                                                            // Error callback
-                        alert('There was an error');
-                    } else {
-                                                                            // Success callback
-
-                                                                            // Save the JWT token.
-                        localStorage.setItem('userToken', token);
-
-                                                                            // Save the profile
-                        session.user_profile = profile;
-                    }
-                });
             } else if (packet.method == 'create' &&
                         packet.type == "user") {
                 session.current_task = 'register';

@@ -170,19 +170,13 @@ class restServer {
 
 
         if (isset($_SERVER['REQUEST_METHOD'])) {
-            $this->crud   = $_SERVER['REQUEST_METHOD'];                                     // since we are implementing CRUD as REST, we should
-        }                                                                                // follow the convention of using the HTTP REQUEST
+            $this->crud   = $_SERVER['REQUEST_METHOD'];                                 // since we are implementing CRUD as REST, we should
+        }                                                                               // follow the convention of using the HTTP REQUEST
                                                                                         // types as indicative of the database function to be
                                                                                         // carried out.  For the life of me I know not why.
                                                                                         // I am sure that was not in the origional thinking
                                                                                         // when designing REST transactions.
-        // test
-        // well, this seems to work fine
-        // $this->database->execute('SELECT * from administrators LIMIT 5');
-        // $this->response['data'] = $this->database->fetch_all();
-        // var_dump($this->response);
-
-        // start with our basic CRUS/REST response functions.  As I have pointed
+        // start with our basic CRUD/REST response functions.  As I have pointed
         // out, in a review of recent published literature regarding the implementation
         // of CRUD/REST, the simple functions sre not going to cover a LOT of
         // what we want to do in out database.  Certainly not with any
@@ -227,7 +221,7 @@ class restServer {
                 // this is just a little test quickly to see if all the
                 // elements are playing nicely together
                 $this->database->log_config->trace("GOING TO SELECT .......");
-                $this->database->execute('SELECT * from administrators LIMIT 10;');
+                $this->database->execute('SELECT * from em_patients LIMIT 10;');
                 $this->database->log_config->trace("AFTER SELECT, GOING TO FETCH.......");
                 $db_result = $this->database->fetch_all();
                 $this->response['data'] = $db_result->get_stack();
@@ -252,7 +246,7 @@ class restServer {
         }
 
         $this->deliver_response();                                                      // Return Response to browser. This will exit the script.
-    }
+    }   // end of contructor, and essentially this instance
 
 
     //----------------------
