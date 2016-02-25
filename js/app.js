@@ -33,12 +33,16 @@
         session.role            = "UNDEFINED";                      // what is the role of the current user
         session.logged_in       = false;                            // always assume no login
         session.current_task    = "UNDEFINED";                      // what task are we performing RIGHT NOW
-
+        session.user_profile    = {};                               // who, what, where and when???
         
         packet                  = {};                               // AJaX(J) packet TO API
-        packet.meta             = {};
+        packet.meta             = {};                               // accompanying meta data
 
-        shared                  = {};
+        shared                  = {};                               // a shared memory block
+                                                                    
+                                                                    // social media authentication
+        lock                    = new Auth0Lock('TgZy1CGIjbIBPs746UXEjYXJpGeWfx9L', 
+                                                    'addinall.au.auth0.com');
 
 
         //-----------------------------------------
@@ -79,11 +83,11 @@
                 contentType:    "application/json"                              // HEADER.  IMPORTANT!
 
             }).fail(function(msg) {                                             // error is depreciated.  WHY? Dunno...
-                alert("Database Communication failure");
-                console.log(JSON.stringify(msg));
+                alert("Database Communication failure");                        // this is a HARD failure sent to
+                console.log(JSON.stringify(msg));                               // us by the comms stack, authentication, or OS
                 })
-              .success(function(data) {
-                __private_callback(data);
+              .success(function(data) {                                         // AJaX worked, deal with the resultant packet
+                __private_callback(data);                                       // in our custom callback.
                 });
         }
 
@@ -188,23 +192,37 @@
 
             var data = $(form).serializeJSON({checkboxUncheckedValue: "false"});
 
-            packet.method      = data.method;                              // move up a level for JSON object
-            packet.type        = data.type;                                // transport standard
+            packet.method      = data.method;                               // move up a level for JSON object
+            packet.type        = data.type;                                 // transport standard
             delete data['method'];
-            delete data['type'];                                                // clean up the object
+            delete data['type'];                                            // clean up the object
 
-            if (packet.method == 'login') {                                // prime our session variables
+            if (packet.method == 'login') {                                 // prime our session variables
                 session.current_task = 'login';
+                lock.show(function(err, profile, token) {
+                    if (err) {
+                                                                            // Error callback
+                        alert('There was an error');
+                    } else {
+                                                                            // Success callback
+
+                                                                            // Save the JWT token.
+                        localStorage.setItem('userToken', token);
+
+                                                                            // Save the profile
+                        session.user_profile = profile;
+                    }
+                });
             } else if (packet.method == 'create' &&
                         packet.type == "user") {
                 session.current_task = 'register';
             }
 
             packet.attributes  = data;                                      
-            //__private_getinfo();                                                // get client geo-location data 
-                                                                                // and merge it with form data
+            __private_getinfo();                                            // get client geo-location data 
+                                                                            // and merge it with form data
 
-            __private_api();                                                    // make an ajax request to the API
+            __private_api();                                                // make an ajax request to the API
         }           
 
 
@@ -212,7 +230,7 @@
         //-------------------------------------
         var __private_list_users = function() {
 
-            $("#user_table").empty();                                           // get rid of the last table
+            $("#user_table").empty();                                       // get rid of the last table
             $("#user_table").append('<table class="table table_striped table-bordered"></table>');                       
             var workspace = $("#user_table").children();
 
@@ -236,7 +254,7 @@
         //--------------------------------------
         var fetch_users = function(alpha,draw) {
            
-            // this is called every time a GO button is pressed in the application
+
             packet.method          = "list";
             packet.type            = "user";
             packet.search          = "name_l";
@@ -244,9 +262,9 @@
             packet.term            = alpha;
             packet.filter           = ["name_f","name_l","email"];
 
-            __private_api();                                                    // make an ajax request to the API
+            __private_api();                                                // make an ajax request to the API
             if (draw) {
-                __private_list_users();                                         // send payload to screen
+                __private_list_users();                                     // send payload to screen
             }
         }
 
@@ -266,7 +284,7 @@ $(document).ready(function() {
     var ALPHABET   = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";                          // SHOULD be a constant BUT this code has
                                                                             // to run in older browsers
     //--------------------------------------------------
-    $(".bpa-ajax-form").bind('submit', function(event) {
+    $(".tit-ajax-form").bind('submit', function(event) {
 
     // instead of the usual method (sic) of tying AJaX(J) calls to the
     // id of specfic forms, we will give all of our client side API
@@ -283,14 +301,20 @@ $(document).ready(function() {
     // we request.
     //
 
-        event.preventDefault();                     // stop the normal submit actions
+        event.preventDefault();                             // stop the normal submit actions
 
-        thatsIT.callAPI(this);                      // that is all we have to do for
-                                                    // ALL of our form/submit based
-                                                    // API requests
+        thatsIT.callAPI(this);                              // that is all we have to do for
+                                                            // ALL of our form/submit based
+                                                            // API requests
 
-    });                                             // end of our AJaX(J) catch-all
-                                                    // form class trap
+    });                                                     // end of our AJaX(J) catch-all
+                                                            // form class trap
+    
+
+    // the above code traps about everything the user wants to ADD or EDIT in the
+    // system by blocking all the forms in the system.  Now we implement some
+    // other more specialised routines that WILL rquire a call to our API server,
+    // but do not involve a form submission.
 
     //-----------------------------------------------
     $("#users_tabs").on('click', 'a',function() {
