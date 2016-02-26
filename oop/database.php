@@ -1,5 +1,5 @@
 <?php
-// vim: set tabstop=4 shiftwidth=4 autoindent smartindent expandtab:
+// vim: set tabstop=4 shiftwidth=4 autoindent expandtab:
 //---------------------------------------------------------
 // CAPTAIN  SLOG
 //---------------------------------------------------------
@@ -129,11 +129,18 @@
 // 11/04/2014 | Back on the job.              |  MA
 // 11/06/2014 | Back in. Distracted by work.  |  MA
 // 29/07/2014 | Added Redis support, cache    |  MA
+// 22/02/2016 | Adapt to new SPA systems      |  MA
+// 26/02/2016 | FINALLY implement PDO         |  MA
 //------------+-------------------------------+------------
 
 
 
 require_once('parser.php');         // SQL front end for noSQL
+                                    // I know, sounds dumb.  I do
+                                    // have a reason.  It makes the calls
+                                    // to some pre-defined procedures consistant
+                                    // in the upper reaches of the API
+//
 //-----------------
 class ResultArray {                 // little object looks kinda weird, it
                                     // serving as a container for an array
@@ -206,6 +213,7 @@ private     $db_cache;          // Redis can eithe be implemented
                                 // choice.  At the moment, this varliable
                                 // is either 'Redis' or 'DONE'.
 public      $log_config;        // our log file configuration
+
     //------------------------------------------
     function __construct(ErrorLogger $logger) {
         $this->log_config = $logger;                            // get our own copy of the data logger.
@@ -241,7 +249,15 @@ public      $log_config;        // our log file configuration
         if ($this->db_type == 'mySQL') {
             $this->hostname = 'p:' . $this->hostname;           // establish a POOL of persistant connections
                                                                 // in server user space saving the overhead of
-                                                                // new connections each AJAX call
+                                                                // new connections each AJAX call. In this model
+                                                                // if a SPA using deep binding and AJaX this CODE
+                                                                // is not persistant as are the newer playtime
+                                                                // Ruby and Python offerings, this code is invoked
+                                                                // under the multi-threaded architecture of Apache2
+                                                                // when required, and persists for one atomic
+                                                                // transaction.  Keeping a pool of open STREAMS to
+                                                                // the RDBMS greatly reduces the startup overhead
+                                                                // per process.
         }
 
         $this->stream   = 0;                                    // stream will come back from the DBMS
@@ -274,6 +290,7 @@ public      $log_config;        // our log file configuration
                                                                 // mySQL, ORACLE, PostgreSQL or DB2 databases
                                                                 // without changing the application code
     } // constructor
+
     //------------------------
     private function connect() {
     
@@ -293,6 +310,10 @@ public      $log_config;        // our log file configuration
                 }                                               // I like the msqli OOP implementation so
                                                                 // we are using that API
             }                                                   // end of mySQL
+                                                                // I implemented PDO in Feb 2016.  I decided
+                                                                // to keep using mysqli as 70%+ of the web apps
+                                                                // use mysql as the RDMS and mysqli is very
+                                                                // well supported.
             //------------------------------------------------------------------------------------------
             if ($this->db_type == 'MSSQL') {                    // have to include Microsoft 
                 $this->stream =                                 // the stream used to be a socket
@@ -305,6 +326,19 @@ public      $log_config;        // our log file configuration
                 }                                               // I like the msqli OOP implementation so
                                                                 // we are using that API
             }                                                   // end of mySQL
+            //------------------------------------------------------------------------------------------
+            if ($this->db_type == 'sqlite') {                   // some people want to use it.
+                $this->stream =                                 // God only knows why.  Ex Ruby and
+                new sql3pdo_connect($this->hostname,            // Pythonese people who know no better
+                            $this->user,                        // I assume.
+                            $this->password);                   //
+                if (!$this->stream) {
+                    $this->log_config->error('Database not started : '
+                        . $stream->connect_error, TRUE);        //
+                }                                               //
+                                                                //
+            }                                                   //
+            //------------------------------------------------------------------------------------------
             //------------------------------------------------------------------------------------------
             if ($this->db_type == 'Mongo') {                    // cater for trendy new database
                 $this->mongo_stream =                           // looks a lot like old CISAM to me...
@@ -408,7 +442,9 @@ public      $log_config;        // our log file configuration
             }                                                   // end of DB2
             //----------------------------------------------------------------------------------------------
             $this->alive = TRUE;                                // if we got here one of the databases is UP!
-        } // end of connect()  
+    } // end of connect() 
+
+
     //--------------------------------------
     public function execute($sql) {
 
@@ -505,6 +541,9 @@ public      $log_config;        // our log file configuration
             }                                                           // Trap for young player!  ;-)
         }
     } // execute 
+
+
+
     //-----------------------
     public function fetch() {
     // fetch the TOP row array from the returned SELECT
@@ -528,6 +567,9 @@ public      $log_config;        // our log file configuration
         else if ($this->db_type == 'DB2') {
         }
     } //  fetch
+
+
+
     //---------------------------
     public function fetch_all() {
     // fetch the entire array from the returned SELECT call.
@@ -544,7 +586,6 @@ public      $log_config;        // our log file configuration
             for ($i=0; $i < $this->result->num_rows; $i++) {
                 $data = $this->fetch();
                 $stack->push($data);
-                //$this->log_config->trace('PUSHED   ' . $data  . 'OOO  ' );
             }
         return($stack);
         }

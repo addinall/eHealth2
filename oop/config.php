@@ -8,13 +8,17 @@
 //  SYSTEM:     New Tools
 //  AUTHOR:     Mark Addinall
 //  DATE:       22/03/2013
-//  SYNOPSIS:   I put up a HTML website for myself in
+//  SYNOPSIS:   "I put up a HTML website for myself in
 //              2002.  I put about six hours worth of
 //              work into it and never touched it again.
 //              It looks and feels like crap, but I never
 //              seemed to have the time nor inclination
 //              to do anything about it!  So, 11 years on,
-//              let's address this.
+//              let's address this."
+//
+//              That was the first run of this file when I wrote
+//              it in 2005!  This is the 2016 version.  Not changed
+//              a great deal.
 //
 //              This is going to be a RESPONSIVE, lightweight
 //              site based on CSS3 and HTML5.  I have been 
@@ -56,10 +60,14 @@
 //------------+-------------------------------+------------
 // DATE       |    CHANGE                     |    WHO
 //------------+-------------------------------+------------
-// 22/03/2013 | Initial creation              |  MA
+// 04/07/2005 | Initial creation              |  MA
+// -----------+-------------------------------+------------
+// 22/03/2013 | Creation again                |  MA
 //------------+-------------------------------+------------
 // 30/07/2014 | Added Content type static     |  MA
-//
+
+
+
 //------------
 class Config {
 // this started out in life as an array,
@@ -110,8 +118,36 @@ private $log_level;         // level of verbosity
 private $google;            // google analystics code reference
 private $os_type;           // which operating system for some low level functions
 
-private $shared_secret;
-                            // there is NO mutator function for this string
+private $shared_secret;     // there is NO MUTATOR function for this string
+                            // there is no ACCESSOR function for this string
+                            // the only way to get access to it is by require(ing) it in your
+                            // source code.
+
+// password security for this system.
+// ----------------------------------
+// This config file is to be published chmod 400 so this initial shared secret should
+// remain 'fairly' safe.  If it is hacked, then the hacker is a lot closer to your
+// system than you want them to be already!
+//
+// I am going to assume that this system is going to be used by sensible people, and
+// that HTTPS/TTL/SSL is going to be used over the wire therefore removing the concern
+// with sending passwords in the 'plain' over the wire.  However, for reasons unknown,
+// and for political purposes with the HR idiots, that may not be enuff.
+//
+// This shared secret is used on the client side to encrypt the password (and confirmation
+// oasswords) before launching text onto the bit of string.  This is a small part of our security
+// system, never the less, this shared secret should be changed on a regular basis, and the
+// ownership/priviliges of this file closely monitered.
+//
+//
+$shared_secret = <<<EOQ
+Now is the winter of our discontent
+    Made glorious summer by this sun of York;
+And all the clouds that lour'd upon our house
+    In the deep bosom of the ocean buried.
+    Now are our brows bound with victorious wreaths;
+EOQ;
+
 
     //---------------------------------------------------------------------------------------------------------
     function __construct($usr, $pass, $db, $host, $dbtype, $strm, $rdir, $css, $errl, $errlev, $google, $os) {
@@ -128,6 +164,10 @@ private $shared_secret;
         $this->set_google($google);
         $this->set_os($os);
     }
+
+    // ACCESSORS and MUTATORS
+    // nothing special to look at
+
     //----------------------------------
     public function set_user($usr) {
         $this->user = $usr;
@@ -225,11 +265,6 @@ private $shared_secret;
         return $this->os_type; 
     }
 
-    //-----------------------------------
-    public function get_shared_secret() {
-        return $this->$shared_secret;
-    }
-
 
 } // end of Config Object
 //---------------------------------------
@@ -291,6 +326,7 @@ $configuration = New Config('root',                     // database username
                                                         // used to build a web app with no database driven
                                                         // CMS.  Dunno why anyone would want to, but it was
                                                         // a request.....
+                                                        // just shoved in sqlite.  again, requested
                             '',                         // this is a socket() pointer returned by the DBMS
                             '',                         // execution root directory, TRAILING SLASH IMPORTANT!
                             'light',                    // CSS3 Skin to use.  This can change on the fly

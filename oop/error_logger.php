@@ -55,11 +55,13 @@
 // DATE       |    CHANGE                     |    WHO
 //------------+-------------------------------+------------
 // 22/03/2013 | Initial creation              |  MA
+// 22/02/2016 | Adapt to new SPA model        |  MA
 //------------+-------------------------------+------------
 //
 //
 //-----------------
 class ErrorLogger {
+    
 // Not only an error logger, but also a trace facility that
 // is used during development, debugging of problems in a production
 // environment, regression testing as a part of the suite of
@@ -78,19 +80,24 @@ class ErrorLogger {
 // 
 // We keep the error files open during the run of the application.
 // This is just to reduce FILE IO overhead.
+
 private $configuration;         // Configuration passed in by REFERENCE
 private $error_fd;              // error file handle
 private $trace_fd;              // trace file handle
 private $error_location;        // where are the log files
 private $error_file;            // the error file
 private $trace_file;            // the system message file
+
+
     //------------------------------------
     function __construct(Config $config) {
         $this->configuration = $config;                             // our PROTECTED copy of configuration
+        
         // first dope the configuration file for nasty
         // re-direction strings.  If we find any, we 
         // just die with a message why.  This stops
         // FILE IO injection attacks.
+
         $error_location = $this->configuration->get_rootdir() .     // dope the configuration data
                           $this->configuration->get_errlog() ;      // and build the location string
         if ((strpos($error_location,"http"))    ||                  // no re-direction allowed, error logs
@@ -131,8 +138,8 @@ private $trace_file;            // the system message file
                                                                     // getting applications to work on big blue.
                                                                     // sort() does weird things as does date().
                                                                     // End of warning.
-        $this->error_file = $error_location . "tools_error.log";    // OK, we hard code the ACTUAL names
-        $this->trace_file = $error_location . "tools_trace.log";    // but leave the location up to the user
+        $this->error_file = $error_location . "error_tit.log";      // OK, we hard code the ACTUAL names
+        $this->trace_file = $error_location . "trace_tit.log";      // but leave the location up to the user
                                                                     // of this framework
         
         if (! ($this->error_fd = fopen($this->error_file, "a")))  {  // try and open the error file to append text 
@@ -149,6 +156,8 @@ private $trace_file;            // the system message file
         }                                                           // or die a horrible death.
         $this->trace("Session started normally. ");                 // say hello to the message file 
     }
+
+
     //---------------------------------------
     public function error($message, $fatal) {
  
@@ -160,6 +169,8 @@ private $trace_file;            // the system message file
                                                                     // write to console
         fflush($this->error_fd);                                    // do NOT cache write buffers
     }
+
+
     //-------------------------------
     public function trace($message) {
         if (! fwrite($this->trace_fd, $message . " - " . 

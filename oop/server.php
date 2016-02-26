@@ -32,9 +32,8 @@
 //
 //              POST to a filtered endpoint /database_object/filter
 //              along with the filter
-//              { inSurveyNo:1993, inState:QLD, isAlive:1 }
+//              { patientNo:1993, inState:QLD, isAlive:1 }
 //
-//              except I REALLY hate that....
 //
 //              Build up the GET query
 //              GET /contacts/?survey_id=1993&state=QLD&is_alive=1
@@ -74,7 +73,6 @@
 //              I kept getting led to the ODATA definitions and API, and it looks like they have
 //              come to the same conclusion as me.  viz:
 //
-//
 //              Step 6: Invoking a function
 //
 //              In RESTful APIs, there can be some custom operations that contain complicated logic and can be 
@@ -90,6 +88,9 @@
 //              This is not REST/CRUD.  It is good ol' fashioned RPC.  Something I am familiar with.
 //              Which is just as well, as this code (some of it) usedta belong to my RPC server
 //              class!
+//
+//              I have decided that we shall accept packets via POST only for now.  We will
+//              still implement the super GLOBAL just in casr I change my mind at a later stage.
 
 
 

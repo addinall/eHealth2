@@ -8,12 +8,12 @@
 //  SYSTEM:    
 //  AUTHOR:     Mark Addinall
 //  DATE:       26/01/2016
-//  SYNOPSIS:   2016 redesign of the Best Practice system.
+//  SYNOPSIS:   2016 redesign of the OOP system(s) 
 //              this is a proof of concept using
 //                  - HTML5 
 //                  - CSS3
 //                  - Bootstrap 
-//                  - Backbone
+//                  - Angular
 //                  - jQuery
 //                  - Underscore
 //              for the fron end, and
@@ -22,7 +22,7 @@
 //                  - mySQL
 //              as the database
 //
-////            Little mailer tied to the contact-us form
+//            Little mailer tied to the contact-us form
 
 
 	header('Content-type: application/json');
@@ -37,11 +37,11 @@
     $message = @trim(stripslashes($_POST['message'])); 
 
     $email_from = $email;
-    $email_to = 'support@bpanz.com';
+    $email_to = 'addinall@addinall.net.au';
 
     $body = 'Name: ' . $name . "\n\n" . 'Email: ' . $email . "\n\n" . 'Subject: ' . $subject . "\n\n" . 'Message: ' . $message;
 
     $success = @mail($email_to, $subject, $body, 'From: <'.$email_from.'>');
 
-    echo json_encode($status);
+    echo json_encode($status . $success);
     die;
