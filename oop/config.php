@@ -134,12 +134,15 @@ private $shared_secret;     // there is NO MUTATOR function for this string
 // with sending passwords in the 'plain' over the wire.  However, for reasons unknown,
 // and for political purposes with the HR idiots, that may not be enuff.
 //
-// This shared secret is used on the client side to encrypt the password (and confirmation
-// oasswords) before launching text onto the bit of string.  This is a small part of our security
-// system, never the less, this shared secret should be changed on a regular basis, and the
-// ownership/priviliges of this file closely monitered.
-//
-//
+    //---------------------------------------------------------------------------------------------------------
+    function __construct($usr, $pass, $db, $host, $dbtype, $strm, $rdir, $css, $errl, $errlev, $google, $os) {
+        
+        // This shared secret is used on the client side to encrypt the password (and confirmation
+        // oasswords) before launching text onto the bit of string.  This is a small part of our security
+        // system, never the less, this shared secret should be changed on a regular basis, and the
+        // ownership/priviliges of this file closely monitered.
+
+
 $shared_secret = <<<EOQ
 Now is the winter of our discontent
     Made glorious summer by this sun of York;
@@ -149,8 +152,6 @@ And all the clouds that lour'd upon our house
 EOQ;
 
 
-    //---------------------------------------------------------------------------------------------------------
-    function __construct($usr, $pass, $db, $host, $dbtype, $strm, $rdir, $css, $errl, $errlev, $google, $os) {
         $this->set_user($usr);
         $this->set_password($pass);
         $this->set_database($db);

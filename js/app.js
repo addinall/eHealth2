@@ -4,7 +4,7 @@
 //---------------------------------------------------------
 //
 //  FILE:       app.js
-//  SYSTEM:   
+//  SYSTEM:     2016 toolset/boilerplate
 //  AUTHOR:     Mark Addinall
 //  DATE:       22/02/2016
 //  SYNOPSIS:   I called it app.js as every other framework
@@ -25,7 +25,6 @@
     // It also keeps things very simple and easy to read and use, uses Objects in a very 
     // nice way, and doesn’t bloat your code with repetitive this and prototype declarations.
 
-    //------------------------------
     //------------------------------
     var thatsIT = (function() {
 
@@ -107,9 +106,9 @@
                 alert("Database Communication failure");                        // this is a HARD failure sent to
                 console.log(JSON.stringify(msg));                               // us by the comms stack, authentication, or OS
                 })
-              .success(function(data) {                                         // AJaX worked, deal with the resultant packet
-                __private_callback(data);                                       // in our custom callback.
-                });
+              .done(function(data) {                                            // AJaX worked, deal with the resultant packet
+                __private_callback(data);                                       // in our custom callback. success() has been
+                });                                                             // depreciated, replaced by bone().  Why???
         }
 
 
@@ -126,7 +125,7 @@
             console.log(data);
             // first test for soft errors from the API
 
-            if (data.hasOwnProperty('error')) {                  // API sent us back a soft error, so
+            if (data.hasOwnProperty('error')) {                 // API sent us back a soft error, so
                 alert(JSON.stringify(data.error));              // tell  the user and
                 return false;                                   // leave the modal dialogue active
             }                                                   // so it can be fixed
@@ -209,9 +208,21 @@
             // we can build in validation sophistication here if and when
             // we need/want to.  'is the password strong enough',
             // does the email conform to RFCxxxx?' cetra.
+            //
+            // Now, in our newer browsers we add the 'required''
+            // attribute to the form item object in the HTML5
+            // and NULLS are trapped on submit before they get
+            // this far.  This doesn't work on anything earlier
+            // than late pick IE9.  To cater for older and 'difficult'
+            // browsers, we simply use the CSS1-3 convenience of
+            // adding a CLASS of required to the appropriate
+            // for items.
 
             $(form).each(function(){
-                //console.log(this);
+                var field = $(this).find(':input');
+                if field.hasClass('required') {
+                    console.log(field);
+                }
             });
 
 
@@ -257,7 +268,7 @@
 
             $("#user_table").empty();                                       // get rid of the last table
             $("#user_table").append('<table class="table table_striped table-bordered"></table>');                       
-            var workspace = $("#user_table").children();
+            var workspace = $("#user_table").children();                    // grab the DOM body of the table
 
             // build the header
 
@@ -267,25 +278,25 @@
                 // loop throught the responses and build the table
              
                 workspace.append('<tr><td>');
-                workspace.append(this.name_f + '</td>');
+                workspace.append(this.first_name + '</td>');
                 workspace.append('<tr><td>');
-                workspace.append(this.name_l + '</td>');
+                workspace.append(this.last_name + '</td>');
                 workspace.append('<tr><td>');
                 workspace.append(this.email  + '</td></tr>');
             });
         }
 
 
-        //--------------------------------------
-        var fetch_users = function(alpha,draw) {
+        //-----------------------------------------------
+        var fetch_users = function(alpha, filter, draw) {
            
 
-            packet.method          = "list";
-            packet.type            = "user";
-            packet.search          = "name_l";
-            packet.card            = "^";
-            packet.term            = alpha;
-            packet.filter           = ["name_f","name_l","email"];
+            packet.method          = "list";                                // GET multiple tuples
+            packet.type            = "user";                                // of type user
+            packet.search          = "last_name";                           // object of simple SELECT criteria
+            packet.card            = "^";                                   // BEGINS with
+            packet.term            = alpha;                                 // the TERM IN - API
+            packet.filter          = filter;                                // TERMS OUT - API eg. ["name_f","name_l","email"];
 
             __private_api();                                                // make an ajax request to the API
             if (draw) {
@@ -294,8 +305,8 @@
         }
 
         //------
-        return {
-            callAPI: callAPI,
+        return {                                                            // ehatever me make visible here is the
+            callAPI: callAPI,                                               // extent of the PUBLIC API.
             fetch_users: fetch_users
         }
 
@@ -315,7 +326,7 @@ $(document).ready(function() {
     // id of specfic forms, we will give all of our client side API
     // consumers a CLASS and treat each with this one routine.
     //
-    // As Alex and I define the contract between the API consumer and
+    // As we define the contract between the API consumer and
     // provider, we will negotiate the parameters that need to be
     // communicated between the two parts of the system.  From the
     // front side here, we will wrap up the parameters in hidden POST
@@ -325,8 +336,6 @@ $(document).ready(function() {
     // indicate in the argument package the type of CRUD transaction
     // we request.
     //
-
-        alert('made it in here');
 
         event.preventDefault();                             // stop the normal submit actions
 
@@ -351,12 +360,14 @@ $(document).ready(function() {
     // This saves HUGE screens, which are pretty awful normally,
     // dreadfull on a smaller device like a fondleslab or telephone.
 
-        var index = $(this).parent("li").index();           // which li was clicked?
-        thatsIT.fetch_users(ALPHABET[index], true);         // fetch those users and draw to screen
+        var index = $(this).parent("li").index();               // which li was clicked?
+        thatsIT.fetch_users(ALPHABET[index], ["first_name",
+                                                "last_name",
+                                                "email"] true); // fetch those users and draw to screen
    });
 
    
-});                                                         // document.ready
+});                                                             // document.ready
 // ------   EOF -------------
 
 
