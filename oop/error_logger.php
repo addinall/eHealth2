@@ -7,7 +7,7 @@
 //	FILE:       error.php 
 //	SYSTEM:     New Tools 
 //	AUTHOR:     Mark Addinall
-//	DATE:       22/03/2013
+//	DATE:       22/03/2016
 //	SYNOPSIS:   This is going to be a RESPONSIVE, lightweight
 //              site based on CSS3 and HTML5.
 //

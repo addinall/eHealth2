@@ -5,7 +5,7 @@
 //---------------------------------------------------------
 //
 //  FILE:       database.php    
-//  SYSTEM:     New Tools 2013
+//  SYSTEM:     New Tools 2016
 //  AUTHOR:     Mark Addinall
 //  DATE:       16/04/2013 
 //  SYNOPSIS:   This file contains the object that will 

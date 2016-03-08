@@ -5,7 +5,7 @@
 //---------------------------------------------------------
 //
 //  FILE:       server.php
-//  SYSTEM:    
+//  SYSTEM:     2016 full stack tool set 
 //  AUTHOR:     Mark Addinall
 //  DATE:       22/02/2016
 //  SYNOPSIS:   This program will form the RESTful server
@@ -116,14 +116,14 @@ class restServer {
 
     private $database;
 
-    private $HTTPS_required             = FALSE;                                        // Define whether an HTTPS connection is required
+    private $HTTPS_required             = FALSE;                // Define whether an HTTPS connection is required
 
                                                                     
-    private $authentication_required    = FALSE;                                        // Define whether user authentication is required;
+    private $authentication_required    = FALSE;                // Define whether user authentication is required;
 
-                                                                                        // Define API response codes and their related HTTP response
+                                                                // Define API response codes and their related HTTP response
 
-    private $format;                                                                    // JSON, XML or HTTP encoded payload
+    private $format;                                            // JSON, XML or HTTP encoded payload
 
     private $api_response_code = array(
             0 => array('HTTP Response' => 400, 'Message' => 'Unknown Error'),
@@ -213,21 +213,18 @@ class restServer {
             }
         }
 
-        $this->crud = "GET";
 
 
         switch($this->crud) {
             case 'GET':
-                // retrieval of tuple(s)
-                // this is just a little test quickly to see if all the
-                // elements are playing nicely together
-                $this->database->log_config->trace("GOING TO SELECT .......");
-                $this->database->execute('SELECT * from em_patients LIMIT 10;');
-                $this->database->log_config->trace("AFTER SELECT, GOING TO FETCH.......");
-                $db_result = $this->database->fetch_all();
-                $this->response['data'] = $db_result->get_stack();
-                $this->database->log_config->trace("FETCHED ........"  . json_encode( $this->response['data']));
-                break;
+                //  retrieval of tuple(s)
+                //  $this->database->log_config->trace("GOING TO SELECT .......");
+                //  $this->database->execute('SELECT * from em_patients LIMIT 10;');
+                //  $this->database->log_config->trace("AFTER SELECT, GOING TO FETCH.......");
+                //  $db_result = $this->database->fetch_all();
+                //  $this->response['data'] = $db_result->get_stack();
+                //  $this->database->log_config->trace("FETCHED ........"  . json_encode( $this->response['data']));
+                //  break;
 
             case 'POST':
                 // create new tuple(s)

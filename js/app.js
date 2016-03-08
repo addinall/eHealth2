@@ -160,6 +160,58 @@
         }
 
 
+        //---------------------------------------
+        var __private_validate = function(form) {
+
+            var is_valid = true;
+
+            // form field validation
+            //
+            // we can build in validation sophistication here if and when
+            // we need/want to.  'is the password strong enough',
+            // does the email conform to RFCxxxx?' cetra.
+            //
+            // Now, in our newer browsers we add the 'required''
+            // attribute to the form item object in the HTML5
+            // and NULLS are trapped on submit before they get
+            // this far.  This doesn't work on anything earlier
+            // than late pick IE9.  To cater for older and 'difficult'
+            // browsers, we simply use the CSS1-3 convenience of
+            // adding a CLASS of required to the appropriate
+            // for items.
+
+            $(form).each(function(){
+                var field = $(this).find(':input');
+                if (field.hasClass('required')) {
+                    console.log(field);
+                    fval = field.val();
+                    if ((fval == null) || fval == '') {
+                        alert('All required fields must be filled out:  ' + field.name);
+                        is_valid = false;
+                    }
+                    if (field.hasClass('email')) {
+                        var regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+                        is_valid = regex.test(fval);
+                        if (! is_valid) {
+                            alert('The email address is invalid.  Please re-enter');
+                        }
+                    }
+                    if (field.hasClass('url')) {
+                        var regex = /(http|ftp|https):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])?/; 
+                        is_valid = regex.test(fval);
+                        if (! is_valid) {
+                            alert('The email address is invalid.  Please re-enter');
+                        }
+                    }
+                }
+                return is_valid;
+            });
+
+
+
+        }
+
+
         //----------------------------------
         var __private_getinfo = function() {
 
@@ -204,38 +256,15 @@
             // fed and do some simple validation.  ie. if the
             // input item is REQUIRED and it has been submitted
             // empty, then BEEP and bugger orf.
-            //
-            // we can build in validation sophistication here if and when
-            // we need/want to.  'is the password strong enough',
-            // does the email conform to RFCxxxx?' cetra.
-            //
-            // Now, in our newer browsers we add the 'required''
-            // attribute to the form item object in the HTML5
-            // and NULLS are trapped on submit before they get
-            // this far.  This doesn't work on anything earlier
-            // than late pick IE9.  To cater for older and 'difficult'
-            // browsers, we simply use the CSS1-3 convenience of
-            // adding a CLASS of required to the appropriate
-            // for items.
 
-            $(form).each(function(){
-                var field = $(this).find(':input');
-                if field.hasClass('required') {
-                    console.log(field);
-                }
-            });
-
-
-            // we then gather a little info about the client first of all.
-            // a clever hacker can spoof an IP, but not all the location
-            // and server information that we can gather.
+            if (! __private_validate(form) {
+                return false;
+            }
 
             var data = $(form).serializeJSON({checkboxUncheckedValue: "false"});
 
             packet.method      = data.method;                               // move up a level for JSON object
             packet.type        = data.type;                                 // transport standard
-            delete data['method'];
-            delete data['type'];                                            // clean up the object
 
             if (packet.method == 'login') {                                 // prime our session variables
                 session.current_task = 'login';
@@ -255,6 +284,11 @@
             }
 
             packet.attributes  = data;                                      
+
+
+            // we then gather a little info about the client first of all.
+            // a clever hacker can spoof an IP, but not all the location
+            // and server information that we can gather.
 
             __private_getinfo();                                            // get client geo-location data 
 
@@ -363,7 +397,7 @@ $(document).ready(function() {
         var index = $(this).parent("li").index();               // which li was clicked?
         thatsIT.fetch_users(ALPHABET[index], ["first_name",
                                                 "last_name",
-                                                "email"] true); // fetch those users and draw to screen
+                                                "email"], true);// fetch those users and draw to screen
    });
 
    
