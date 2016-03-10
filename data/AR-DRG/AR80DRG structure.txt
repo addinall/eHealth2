@@ -1,0 +1,862 @@
+TABLE 1.4  List of Australian Refined Diagnosis Related Groups Version 8.0
+
+DRG	Partition	Description
+
+MDC Pre Major Procedures with a principal diagnosis associated with any MDC
+A01Z	S	Liver Transplant
+A03Z	S	Lung or Heart-Lung Transplant
+A05Z	S	Heart Transplant
+A06A	S	Tracheostomy and/or Ventilation >=96hours, Major Complexity
+A06B	S	Tracheostomy and/or Ventilation >=96hours, Intermediate Complexity
+A06C	S	Tracheostomy and/or Ventilation >=96hours, Minor Complexity
+A07A	S	Allogeneic Bone Marrow Transplant, Age <=16 Years or Major Complexity
+A07B	S	Allogeneic Bone Marrow Transplant, Age >=17 Years and Minor Complexity
+A08A	S	Autologous Bone Marrow Transplant, Major Complexity
+A08B	S	Autologous Bone Marrow Transplant, Minor Complexity
+A09A	S	Kidney Transplant, Age <=16 Years or Major Complexity
+A09B	S	Kidney Transplant, Age >=17 Years and Minor Complexity
+A10Z	S	Insertion of Ventricular Assist Device
+A11A	S	Insertion of Implantable Spinal Infusion Device, Major Complexity
+A11B	S	Insertion of Implantable Spinal Infusion Device, Minor Complexity
+A12Z	S	Insertion of Neurostimulator Device
+A40A	O	ECMO, Major Complexity
+A40B	O	ECMO, Minor Complexity
+
+MDC 01 Diseases and Disorders of the Nervous System		
+B01A	S	Ventricular Shunt Revision, Major Complexity
+B01B	S	Ventricular Shunt Revision, Minor Complexity
+B02A	S	Cranial Procedures, Major Complexity
+B02B	S	Cranial Procedures, Intermediate Complexity
+B02C	S	Cranial Procedures, Minor Complexity
+B03A	S	Spinal Procedures, Major Complexity
+B03B	S	Spinal Procedures, Intermediate Complexity
+B03C	S	Spinal Procedures, Minor Complexity
+B04A	S	Extracranial Vascular Procedures, Major Complexity
+B04B	S	Extracranial Vascular Procedures, Intermediate Complexity
+B04C	S	Extracranial Vascular Procedures, Minor Complexity
+B05Z	S	Carpal Tunnel Release
+B06A	S	Procedures for Cerebral Palsy, Muscular Dystrophy and Neuropathy, Major Comp
+B06B	S	Procedures for Cerebral Palsy, Muscular Dystrophy and Neuropathy, Interm Comp
+B06C	S	Procedures for Cerebral Palsy, Muscular Dystrophy and Neuropathy, Minor Comp
+B07A	S	Cranial or Peripheral Nerve and Other Nervous System Procedures, Major Comp
+B07B	S	Cranial or Peripheral Nerve and Other Nervous System Procedures, Minor Comp
+B40Z	O	Plasmapheresis W Neurological Disease, Sameday
+B41Z	O	Telemetric EEG Monitoring
+B42A	O	Nervous System Disorders W Ventilator Support, Major Complexity
+B42B	O	Nervous System Disorders W Ventilator Support, Minor Complexity
+B60A	M	Acute Paraplegia and Quadriplegia W or W/O OR Procedures, Major Complexity
+B60B	M	Acute Paraplegia and Quadriplegia W or W/O OR Procedures, Minor Complexity
+B61A	M	Spinal Cord Conditions W or W/O OR Procedures, Major Complexity
+B61B	M	Spinal Cord Conditions W or W/O OR Procedures, Minor Complexity
+B62Z	M	Apheresis
+B63A	M	Dementia and Other Chronic Disturbances of Cerebral Function, Major Complexity
+B63B	M	Dementia and Other Chronic Disturbances of Cerebral Function, Minor Complexity
+B64A	M	Delirium, Major Complexity
+B64B	M	Delirium, Minor Complexity
+B65A	M	Cerebral Palsy, Major Complexity
+B65B	M	Cerebral Palsy, Minor Complexity
+B66A	M	Nervous System Neoplasms, Major Complexity
+B66B	M	Nervous System Neoplasms, Minor Complexity
+B67A	M	Degenerative Nervous System Disorders, Major Complexity
+B67B	M	Degenerative Nervous System Disorders, Intermediate Complexity
+B67C	M	Degenerative Nervous System Disorders, Minor Complexity
+B68A	M	Multiple Sclerosis and Cerebellar Ataxia, Major Complexity
+B68B	M	Multiple Sclerosis and Cerebellar Ataxia, Minor Complexity
+B69A	M	TIA and Precerebral Occlusion, Major Complexity
+B69B	M	TIA and Precerebral Occlusion, Minor Complexity
+B70A	M	Stroke and Other Cerebrovascular Disorders, Major Complexity
+B70B	M	Stroke and Other Cerebrovascular Disorders, Intermediate Complexity
+B70C	M	Stroke and Other Cerebrovascular Disorders, Minor Complexity
+B70D	M	Stroke and Other Cerebrovascular Disorders, Transferred <5 Days
+B71A	M	Cranial and Peripheral Nerve Disorders, Major Complexity
+B71B	M	Cranial and Peripheral Nerve Disorders, Minor Complexity
+B72A	M	Nervous System Infection Except Viral Meningitis, Major Complexity
+B72B	M	Nervous System Infection Except Viral Meningitis, Minor Complexity
+B73Z	M	Viral Meningitis
+B74A	M	Nontraumatic Stupor and Coma, Major Complexity
+B74B	M	Nontraumatic Stupor and Coma, Minor Complexity
+B75Z	M	Febrile Convulsions
+B76A	M	Seizures, Major Complexity
+B76B	M	Seizures, Minor Complexity
+B77A	M	Headaches, Major Complexity
+B77B	M	Headaches, Minor Complexity
+B78A	M	Intracranial Injuries, Major Complexity
+B78B	M	Intracranial Injuries, Minor Complexity
+B78C	M	Intracranial Injuries, Transferred <5 Days
+B79A	M	Skull Fractures, Major Complexity
+B79B	M	Skull Fractures, Minor Complexity
+B80A	M	Other Head Injuries, Major Complexity
+B80B	M	Other Head Injuries, Minor Complexity
+B81A	M	Other Disorders of the Nervous System, Major Complexity
+B81B	M	Other Disorders of the Nervous System, Minor Complexity
+B82A	M	Chronic & Unspec Para/Quadriplegia W or W/O OR Proc, Major Complexity
+B82B	M	Chronic & Unspec Para/Quadriplegia W or W/O OR Proc, Intermediate Complexity
+B82C	M	Chronic & Unspec Para/Quadriplegia W or W/O OR Proc, Minor Complexity
+
+MDC 02 Diseases and Disorders of the Eye		
+C01A	S	Procedures for Penetrating Eye Injury, Major Complexity
+C01B	S	Procedures for Penetrating Eye Injury, Minor Complexity
+C02Z	S	Enucleations and Orbital Procedures
+C03A	S	Retinal Procedures, Major Complexity
+C03B	S	Retinal Procedures, Minor Complexity
+C04A	S	Major Corneal, Scleral and Conjunctival Procedures, Major Complexity
+C04B	S	Major Corneal, Scleral and Conjunctival Procedures, Minor Complexity
+C05Z	S	Dacryocystorhinostomy
+C10Z	S	Strabismus Procedures
+C11Z	S	Eyelid Procedures
+C12Z	S	Other Corneal, Scleral and Conjunctival Procedures
+C13Z	S	Lacrimal Procedures
+C14A	S	Other Eye Procedures, Major Complexity
+C14B	S	Other Eye Procedures, Minor Complexity
+C15Z	S	Glaucoma and Complex Cataract Procedures
+C16Z	S	Lens Procedures
+C60A	M	Acute and Major Eye Infections, Major Complexity
+C60B	M	Acute and Major Eye Infections, Minor Complexity
+C61A	M	Neurological and Vascular Disorders of the Eye, Major Complexity
+C61B	M	Neurological and Vascular Disorders of the Eye, Minor Complexity
+C62A	M	Hyphaema and Medically Managed Trauma to the Eye, Major Complexity
+C62B	M	Hyphaema and Medically Managed Trauma to the Eye, Minor Complexity
+C63A	M	Other Disorders of the Eye, Major Complexity
+C63B	M	Other Disorders of the Eye, Intermediate Complexity
+C63C	M	Other Disorders of the Eye, Minor Complexity
+
+MDC 03 Diseases and Disorders of the Ear, Nose, Mouth and Throat		
+D01Z	S	Cochlear Implant
+D02A	S	Head and Neck Procedures, Major Complexity
+D02B	S	Head and Neck Procedures, Intermediate Complexity
+D02C	S	Head and Neck Procedures, Minor Complexity
+D03Z	S	Surgical Repair for Cleft Lip and Palate Disorders
+D04A	S	Maxillo Surgery, Major Complexity
+D04B	S	Maxillo Surgery, Minor Complexity
+D05Z	S	Parotid Gland Procedures
+D06Z	S	Sinus and Complex Middle Ear Procedures
+D10Z	S	Nasal Procedures
+D11Z	S	Tonsillectomy and Adenoidectomy
+D12A	S	Other Ear, Nose, Mouth and Throat Procedures, Major Complexity
+D12B	S	Other Ear, Nose, Mouth and Throat Procedures, Minor Complexity
+D13Z	S	Myringotomy W Tube Insertion
+D14A	S	Mouth and Salivary Gland Procedures, Major Complexity
+D14B	S	Mouth and Salivary Gland Procedures, Minor Complexity
+D15Z	S	Mastoid Procedures
+D40Z	O	Dental Extractions and Restorations
+D60A	M	Ear, Nose, Mouth and Throat Malignancy, Major Complexity
+D60B	M	Ear, Nose, Mouth and Throat Malignancy, Minor Complexity
+D61A	M	Dysequilibrium, Major Complexity
+D61B	M	Dysequilibrium, Minor Complexity
+D62A	M	Epistaxis, Major Complexity
+D62B	M	Epistaxis, Minor Complexity
+D63A	M	Otitis Media and Upper Respiratory Infections, Major Complexity
+D63B	M	Otitis Media and Upper Respiratory Infections, Minor Complexity
+D64A	M	Laryngotracheitis and Epiglottitis, Major Complexity
+D64B	M	Laryngotracheitis and Epiglottitis, Minor Complexity
+D65A	M	Nasal Trauma and Deformity, Major Complexity
+D65B	M	Nasal Trauma and Deformity, Minor Complexity
+D66A	M	Other Ear, Nose, Mouth and Throat Disorders, Major Complexity
+D66B	M	Other Ear, Nose, Mouth and Throat Disorders, Minor Complexity
+D67A	M	Oral and Dental Disorders, Major Complexity
+D67B	M	Oral and Dental Disorders, Minor Complexity
+
+MDC 04 Diseases and Disorders of the Respiratory System		
+E01A	S	Major Chest Procedures, Major Complexity
+E01B	S	Major Chest Procedures, Intermediate Complexity
+E01C	S	Major Chest Procedures, Minor Complexity
+E02A	S	Other Respiratory System OR Procedures, Major Complexity
+E02B	S	Other Respiratory System OR Procedures, Intermediate Complexity
+E02C	S	Other Respiratory System OR Procedures, Minor Complexity
+E40A	O	Respiratory System Disorders W Ventilator Support, Major Complexity
+E40B	O	Respiratory System Disorders W Ventilator Support, Minor Complexity
+E41A	O	Respiratory System Disorders W Non-Invasive Ventilation, Major Complexity
+E41B	O	Respiratory System Disorders W Non-Invasive Ventilation, Minor Complexity
+E42A	O	Bronchoscopy, Major Complexity
+E42B	O	Bronchoscopy, Minor Complexity
+E60A	M	Cystic Fibrosis, Major Complexity
+E60B	M	Cystic Fibrosis, Minor Complexity
+E61A	M	Pulmonary Embolism, Major Complexity
+E61B	M	Pulmonary Embolism, Minor Complexity
+E62A	M	Respiratory Infections and Inflammations, Major Complexity
+E62B	M	Respiratory Infections and Inflammations, Minor Complexity
+E63A	M	Sleep Apnoea, Major Complexity
+E63B	M	Sleep Apnoea, Minor Complexity
+E64A	M	Pulmonary Oedema and Respiratory Failure, Major Complexity
+E64B	M	Pulmonary Oedema and Respiratory Failure, Minor Complexity
+E65A	M	Chronic Obstructive Airways Disease, Major Complexity
+E65B	M	Chronic Obstructive Airways Disease, Minor Complexity
+E66A	M	Major Chest Trauma, Major Complexity
+E66B	M	Major Chest Trauma, Minor Complexity
+E67A	M	Respiratory Signs and Symptoms, Major Complexity
+E67B	M	Respiratory Signs and Symptoms, Minor Complexity
+E68A	M	Pneumothorax, Major Complexity
+E68B	M	Pneumothorax, Minor Complexity
+E69A	M	Bronchitis and Asthma, Major Complexity
+E69B	M	Bronchitis and Asthma, Minor Complexity
+E70A	M	Whooping Cough and Acute Bronchiolitis, Major Complexity
+E70B	M	Whooping Cough and Acute Bronchiolitis, Minor Complexity
+E71A	M	Respiratory Neoplasms, Major Complexity
+E71B	M	Respiratory Neoplasms, Minor Complexity
+E72Z	M	Respiratory Problems Arising from Neonatal Period
+E73A	M	Pleural Effusion, Major Complexity
+E73B	M	Pleural Effusion, Intermediate Complexity
+E73C	M	Pleural Effusion, Minor Complexity
+E74A	M	Interstitial Lung Disease, Major Complexity
+E74B	M	Interstitial Lung Disease, Minor Complexity
+E75A	M	Other Respiratory System Disorders, Major Complexity
+E75B	M	Other Respiratory System Disorders, Minor Complexity
+E76A	M	Respiratory Tuberculosis, Major Complexity
+E76B	M	Respiratory Tuberculosis, Minor Complexity
+
+MDC 05 Diseases and Disorders of the Circulatory System		
+F01A	S	Implantation and Replacement of AICD, Total System, Major Complexity
+F01B	S	Implantation and Replacement of AICD, Total System, Minor Complexity
+F02Z	S	Other AICD Procedures
+F03A	S	Cardiac Valve Procedures W CPB Pump W Invasive Cardiac Investigation, Major Comp
+F03B	S	Cardiac Valve Procedures W CPB Pump W Invasive Cardiac Investigation, Minor Comp
+F04A	S	Cardiac Valve Procedures W CPB Pump W/O Invasive Cardiac Invest, Major Comp
+F04B	S	Cardiac Valve Procedures W CPB Pump W/O Invasive Cardiac Invest, Interm Comp
+F04C	S	Cardiac Valve Procedures W CPB Pump W/O Invasive Cardiac Invest, Minor Comp
+F05A	S	Coronary Bypass W Invasive Cardiac Investigation, Major Complexity
+F05B	S	Coronary Bypass W Invasive Cardiac Investigation, Minor Complexity
+F06A	S	Coronary Bypass W/O Invasive Cardiac Investigation, Major Complexity
+F06B	S	Coronary Bypass W/O Invasive Cardiac Investigation, Minor Complexity
+F07A	S	Other Cardiothoracic/Vascular Procedures W CPB Pump, Major Complexity
+F07B	S	Other Cardiothoracic/Vascular Procedures W CPB Pump, Intermediate Complexity
+F07C	S	Other Cardiothoracic/Vascular Procedures W CPB Pump, Minor Complexity
+F08A	S	Major Reconstructive Vascular Procedures W/O CPB Pump, Major Complexity
+F08B	S	Major Reconstructive Vascular Procedures W/O CPB Pump, Intermediate Complexity
+F08C	S	Major Reconstructive Vascular Procedures W/O CPB Pump, Minor Complexity
+F09A	S	Other Cardiothoracic Procedures W/O CPB Pump, Major Complexity
+F09B	S	Other Cardiothoracic Procedures W/O CPB Pump, Intermediate Complexity
+F09C	S	Other Cardiothoracic Procedures W/O CPB Pump, Minor Complexity
+F10A	S	Interventional Coronary Procedures, Admitted for AMI, Major Complexity
+F10B	S	Interventional Coronary Procedures, Admitted for AMI, Minor Complexity
+F11A	S	Amputation, Except Upper Limb and Toe, for Circulatory Disorders, Major Comp
+F11B	S	Amputation, Except Upper Limb and Toe, for Circulatory Disorders, Minor Comp
+F12A	S	Implantation and Replacement of Pacemaker, Total System, Major Complexity
+F12B	S	Implantation and Replacement of Pacemaker, Total System, Minor Complexity
+F13A	S	Amputation, Upper Limb and Toe, for Circulatory Disorders, Major Complexity
+F13B	S	Amputation, Upper Limb and Toe, for Circulatory Disorders, Minor Complexity
+F14A	S	Vascular Procedures, Except Major Reconstruction, W/O CPB Pump, Major Complexity
+F14B	S	Vascular Procedures, Except Major Reconstruction, W/O CPB Pump, Interm Comp
+F14C	S	Vascular Procedures, Except Major Reconstruction, W/O CPB Pump, Minor Complexity
+F15A	S	Interventional Coronary Procs, Not Adm for AMI, W Stent Implant, Major Comp
+F15B	S	Interventional Coronary Procs, Not Adm for AMI, W Stent Implant, Minor Comp
+F16A	S	Interventional Coronary Procs, Not Adm for AMI, W/O Stent Implant, Major Comp
+F16B	S	Interventional Coronary Procs, Not Adm for AMI, W/O Stent Implant, Minor Comp
+F17A	S	Insertion and Replacement of Pacemaker Generator, Major Complexity
+F17B	S	Insertion and Replacement of Pacemaker Generator, Minor Complexity
+F18A	S	Other Pacemaker Procedures, Major Complexity
+F18B	S	Other Pacemaker Procedures, Minor Complexity
+F19A	S	Trans-Vascular Percutaneous Cardiac Intervention, Major Complexity
+F19B	S	Trans-Vascular Percutaneous Cardiac Intervention, Minor Complexity
+F20Z	S	Vein Ligation and Stripping
+F21A	S	Other Circulatory System OR Procedures, Major Complexity
+F21B	S	Other Circulatory System OR Procedures, Intermediate Complexity
+F21C	S	Other Circulatory System OR Procedures, Minor Complexity
+F40A	O	Circulatory Disorders W Ventilator Support, Major Complexity
+F40B	O	Circulatory Disorders W Ventilator Support, Minor Complexity
+F41A	O	Circulatory Disorders, Adm for AMI W Invasive Cardiac Inves Proc, Major Comp
+F41B	O	Circulatory Disorders, Adm for AMI W Invasive Cardiac Inves Proc, Minor Comp
+F42A	O	Circulatory Dsrds, Not Adm for AMI W Invasive Cardiac Inves Proc, Major Comp
+F42B	O	Circulatory Dsrds, Not Adm for AMI W Invasive Cardiac Inves Proc, Minor Comp
+F43A	O	Circulatory Disorders W Non-Invasive Ventilation, Major Complexity
+F43B	O	Circulatory Disorders W Non-Invasive Ventilation, Minor Complexity
+F60A	M	Circulatory Dsrd, Adm for AMI W/O Invas Card Inves Proc
+F60B	M	Circulatory Dsrd, Adm for AMI W/O Invas Card Inves Proc, Transf <5 Days
+F61A	M	Infective Endocarditis, Major Complexity
+F61B	M	Infective Endocarditis, Minor Complexity
+F62A	M	Heart Failure and Shock, Major Complexity
+F62B	M	Heart Failure and Shock, Minor Complexity
+F62C	M	Heart Failure and Shock, Transferred <5 Days
+F63A	M	Venous Thrombosis, Major Complexity
+F63B	M	Venous Thrombosis, Minor Complexity
+F64A	M	Skin Ulcers in Circulatory Disorders, Major Complexity
+F64B	M	Skin Ulcers in Circulatory Disorders, Intermediate Complexity
+F64C	M	Skin Ulcers in Circulatory Disorders, Minor Complexity
+F65A	M	Peripheral Vascular Disorders, Major Complexity
+F65B	M	Peripheral Vascular Disorders, Minor Complexity
+F66A	M	Coronary Atherosclerosis, Major Complexity
+F66B	M	Coronary Atherosclerosis, Minor Complexity
+F67A	M	Hypertension, Major Complexity
+F67B	M	Hypertension, Minor Complexity
+F68A	M	Congenital Heart Disease, Major Complexity
+F68B	M	Congenital Heart Disease, Minor Complexity
+F69A	M	Valvular Disorders, Major Complexity
+F69B	M	Valvular Disorders, Minor Complexity
+F72A	M	Unstable Angina, Major Complexity
+F72B	M	Unstable Angina, Minor Complexity
+F73A	M	Syncope and Collapse, Major Complexity
+F73B	M	Syncope and Collapse, Minor Complexity
+F74A	M	Chest Pain, Major Complexity
+F74B	M	Chest Pain, Minor Complexity
+F75A	M	Other Circulatory Disorders, Major Complexity
+F75B	M	Other Circulatory Disorders, Intermediate Complexity
+F75C	M	Other Circulatory Disorders, Minor Complexity
+F76A	M	Arrhythmia, Cardiac Arrest and Conduction Disorders, Major Complexity
+F76B	M	Arrhythmia, Cardiac Arrest and Conduction Disorders, Minor Complexity
+
+MDC 06 Diseases and Disorders of the Digestive System		
+G01A	S	Rectal Resection, Major Complexity
+G01B	S	Rectal Resection, Intermediate Complexity
+G01C	S	Rectal Resection, Minor Complexity
+G02A	S	Major Small and Large Bowel Procedures, Major Complexity
+G02B	S	Major Small and Large Bowel Procedures, Intermediate Complexity
+G02C	S	Major Small and Large Bowel Procedures, Minor Complexity
+G03A	S	Stomach, Oesophageal and Duodenal Procedures, Major Complexity
+G03B	S	Stomach, Oesophageal and Duodenal Procedures, Intermediate Complexity
+G03C	S	Stomach, Oesophageal and Duodenal Procedures, Minor Complexity
+G04A	S	Peritoneal Adhesiolysis, Major Complexity
+G04B	S	Peritoneal Adhesiolysis, Intermediate Complexity
+G04C	S	Peritoneal Adhesiolysis, Minor Complexity
+G05A	S	Minor Small and Large Bowel Procedures, Major Complexity
+G05B	S	Minor Small and Large Bowel Procedures, Minor Complexity
+G06Z	S	Pyloromyotomy
+G07A	S	Appendicectomy, Major Complexity
+G07B	S	Appendicectomy, Minor Complexity
+G10A	S	Hernia Procedures, Major Complexity
+G10B	S	Hernia Procedures, Minor Complexity
+G11A	S	Anal and Stomal Procedures, Major Complexity
+G11B	S	Anal and Stomal Procedures, Minor Complexity
+G12A	S	Other Digestive System OR Procedures, Major Complexity
+G12B	S	Other Digestive System OR Procedures, Intermediate Complexity
+G12C	S	Other Digestive System OR Procedures, Minor Complexity
+G46A	O	Complex Endoscopy, Major Complexity
+G46B	O	Complex Endoscopy, Minor Complexity
+G47A	O	Gastroscopy, Major Complexity
+G47B	O	Gastroscopy, Intermediate Complexity
+G47C	O	Gastroscopy, Minor Complexity
+G48A	O	Colonoscopy, Major Complexity
+G48B	O	Colonoscopy, Minor Complexity
+G60A	M	Digestive Malignancy, Major Complexity
+G60B	M	Digestive Malignancy, Minor Complexity
+G61A	M	Gastrointestinal Haemorrhage, Major Complexity
+G61B	M	Gastrointestinal Haemorrhage, Minor Complexity
+G64A	M	Inflammatory Bowel Disease, Major Complexity
+G64B	M	Inflammatory Bowel Disease, Minor Complexity
+G65A	M	Gastrointestinal Obstruction, Major Complexity
+G65B	M	Gastrointestinal Obstruction, Minor Complexity
+G66A	M	Abdominal Pain and Mesenteric Adenitis, Major Complexity
+G66B	M	Abdominal Pain and Mesenteric Adenitis, Minor Complexity
+G67A	M	Oesophagitis and Gastroenteritis, Major Complexity
+G67B	M	Oesophagitis and Gastroenteritis, Minor Complexity
+G70A	M	Other Digestive System Disorders, Major Complexity
+G70B	M	Other Digestive System Disorders, Minor Complexity
+
+MDC 07 Diseases and Disorders of the Hepatobiliary System and Pancreas		
+H01A	S	Pancreas, Liver and Shunt Procedures, Major Complexity
+H01B	S	Pancreas, Liver and Shunt Procedures, Intermediate Complexity
+H01C	S	Pancreas, Liver and Shunt Procedures, Minor Complexity
+H02A	S	Major Biliary Tract Procedures, Major Complexity
+H02B	S	Major Biliary Tract Procedures, Minor Complexity
+H05A	S	Hepatobiliary Diagnostic Procedures, Major Complexity
+H05B	S	Hepatobiliary Diagnostic Procedures, Minor Complexity
+H06A	S	Other Hepatobiliary and Pancreas OR Procedures, Major Complexity
+H06B	S	Other Hepatobiliary and Pancreas OR Procedures, Intermediate Complexity
+H06C	S	Other Hepatobiliary and Pancreas OR Procedures, Minor Complexity
+H07A	S	Open Cholecystectomy, Major Complexity
+H07B	S	Open Cholecystectomy, Intermediate Complexity
+H07C	S	Open Cholecystectomy, Minor Complexity
+H08A	S	Laparoscopic Cholecystectomy, Major Complexity
+H08B	S	Laparoscopic Cholecystectomy, Minor Complexity
+H40A	O	Endoscopic Procedures for Bleeding Oesophageal Varices, Major Complexity
+H40B	O	Endoscopic Procedures for Bleeding Oesophageal Varices, Intermediate Complexity
+H40C	O	Endoscopic Procedures for Bleeding Oesophageal Varices, Minor Complexity
+H43A	O	ERCP Procedures, Major Complexity
+H43B	O	ERCP Procedures, Intermediate Complexity
+H43C	O	ERCP Procedures, Minor Complexity
+H60A	M	Cirrhosis and Alcoholic Hepatitis, Major Complexity
+H60B	M	Cirrhosis and Alcoholic Hepatitis, Intermediate Complexity
+H60C	M	Cirrhosis and Alcoholic Hepatitis, Minor Complexity
+H61A	M	Malignancy of Hepatobiliary System and Pancreas, Major Complexity
+H61B	M	Malignancy of Hepatobiliary System and Pancreas, Minor Complexity
+H62A	M	Disorders of Pancreas, Except Malignancy, Major Complexity
+H62B	M	Disorders of Pancreas, Except Malignancy, Minor Complexity
+H63A	M	Other Disorders of Liver, Major Complexity
+H63B	M	Other Disorders of Liver, Intermediate Complexity
+H63C	M	Other Disorders of Liver, Minor Complexity
+H64A	M	Disorders of the Biliary Tract, Major Complexity
+H64B	M	Disorders of the Biliary Tract, Minor Complexity
+
+MDC 08 Diseases and Disorders of the Musculoskeletal System and Connective Tissue		
+I01A	S	Bilateral and Multiple Major Joint Procedures of Lower Limb, Major Complexity
+I01B	S	Bilateral and Multiple Major Joint Procedures of Lower Limb, Minor Complexity
+I02A	S	Microvascular Tissue Transfers or Skin Grafts, Excluding Hand, Major Complexity
+I02B	S	Microvascular Tissue Transfers or Skin Grafts, Excluding Hand, Intermediate Comp
+I02C	S	Microvascular Tissue Transfers or Skin Grafts, Excluding Hand, Minor Complexity
+I03A	S	Hip Replacement, Major Complexity
+I03B	S	Hip Replacement, Minor Complexity
+I04A	S	Knee Replacement, Major Complexity
+I04B	S	Knee Replacement, Minor Complexity
+I05A	S	Other Joint Replacement, Major Complexity
+I05B	S	Other Joint Replacement, Minor Complexity
+I06Z	S	Spinal Fusion for Deformity
+I07Z	S	Amputation
+I08A	S	Other Hip and Femur Procedures, Major Complexity
+I08B	S	Other Hip and Femur Procedures, Minor Complexity
+I09A	S	Spinal Fusion, Major Complexity
+I09B	S	Spinal Fusion, Intermediate Complexity
+I09C	S	Spinal Fusion, Minor Complexity
+I10A	S	Other Back and Neck Procedures, Major Complexity
+I10B	S	Other Back and Neck Procedures, Minor Complexity
+I11Z	S	Limb Lengthening Procedures
+I12A	S	Misc Musculoskeletal Procs for Infect/Inflam of Bone/Joint, Major Complexity
+I12B	S	Misc Musculoskeletal Procs for Infect/Inflam of Bone/Joint, Intermediate Comp
+I12C	S	Misc Musculoskeletal Procs for Infect/Inflam of Bone/Joint, Minor Complexity
+I13A	S	Humerus, Tibia, Fibula and Ankle Procedures, Major Complexity
+I13B	S	Humerus, Tibia, Fibula and Ankle Procedures, Minor Complexity
+I15A	S	Cranio-Facial Surgery, Major Complexity
+I15B	S	Cranio-Facial Surgery, Minor Complexity
+I16Z	S	Other Shoulder Procedures
+I17A	S	Maxillo-Facial Surgery, Major Complexity
+I17B	S	Maxillo-Facial Surgery, Minor Complexity
+I18A	S	Other Knee Procedures, Major Complexity
+I18B	S	Other Knee Procedures, Minor Complexity
+I19A	S	Other Elbow and Forearm Procedures, Major Complexity
+I19B	S	Other Elbow and Forearm Procedures, Minor Complexity
+I20A	S	Other Foot Procedures, Major Complexity
+I20B	S	Other Foot Procedures, Minor Complexity
+I21Z	S	Local Excision and Removal of Internal Fixation Devices of Hip and Femur
+I23A	S	Local Excision & Removal of Internal Fixation Device, Except Hip & Fmr, Maj Comp
+I23B	S	Local Excision & Removal of Internal Fixation Device, Except Hip & Fmr, Min Comp
+I24A	S	Arthroscopy, Major Complexity
+I24B	S	Arthroscopy, Minor Complexity
+I25A	S	Bone and Joint Diagnostic Procedures Including Biopsy, Major Complexity
+I25B	S	Bone and Joint Diagnostic Procedures Including Biopsy, Minor Complexity
+I27A	S	Soft Tissue Procedures, Major Complexity
+I27B	S	Soft Tissue Procedures, Minor Complexity
+I28A	S	Other Musculoskeletal Procedures, Major Complexity
+I28B	S	Other Musculoskeletal Procedures, Intermediate Complexity
+I28C	S	Other Musculoskeletal Procedures, Minor Complexity
+I29Z	S	Knee Reconstructions, and Revisions of Reconstructions
+I30Z	S	Hand Procedures
+I31A	S	Revision of Hip Replacement, Major Complexity
+I31B	S	Revision of Hip Replacement, Intermediate Complexity
+I31C	S	Revision of Hip Replacement, Minor Complexity
+I32A	S	Revision of Knee Replacement, Major Complexity
+I32B	S	Revision of Knee Replacement, Minor Complexity
+I40Z	O	Infusions for Musculoskeletal Disorders, Sameday
+I60Z	M	Femoral Shaft Fractures
+I61A	M	Distal Femoral Fractures, Major Complexity
+I61B	M	Distal Femoral Fractures, Minor Complexity
+I63A	M	Sprains, Strains and Dislocations of Hip, Pelvis and Thigh, Major Complexity
+I63B	M	Sprains, Strains and Dislocations of Hip, Pelvis and Thigh, Minor Complexity
+I64A	M	Osteomyelitis, Major Complexity
+I64B	M	Osteomyelitis, Minor Complexity
+I65A	M	Musculoskeletal Malignant Neoplasms, Major Complexity
+I65B	M	Musculoskeletal Malignant Neoplasms, Minor Complexity
+I66A	M	Inflammatory Musculoskeletal Disorders, Major Complexity
+I66B	M	Inflammatory Musculoskeletal Disorders, Intermediate Complexity
+I66C	M	Inflammatory Musculoskeletal Disorders, Minor Complexity
+I67A	M	Septic Arthritis, Major Complexity
+I67B	M	Septic Arthritis, Minor Complexity
+I68A	M	Non-surgical Spinal Disorders, Major Complexity
+I68B	M	Non-surgical Spinal Disorders, Minor Complexity
+I69A	M	Bone Diseases and Arthropathies, Major Complexity
+I69B	M	Bone Diseases and Arthropathies, Minor Complexity
+I71A	M	Other Musculotendinous Disorders, Major Complexity
+I71B	M	Other Musculotendinous Disorders, Minor Complexity
+I72A	M	Specific Musculotendinous Disorders, Major Complexity
+I72B	M	Specific Musculotendinous Disorders, Minor Complexity
+I73A	M	Aftercare of Musculoskeletal Implants or Prostheses, Major Complexity
+I73B	M	Aftercare of Musculoskeletal Implants or Prostheses, Minor Complexity
+I74A	M	Injuries to Forearm, Wrist, Hand and Foot, Major Complexity
+I74B	M	Injuries to Forearm, Wrist, Hand and Foot, Minor Complexity
+I75A	M	Injuries to Shoulder, Arm, Elbow, Knee, Leg and Ankle, Major Complexity
+I75B	M	Injuries to Shoulder, Arm, Elbow, Knee, Leg and Ankle, Minor Complexity
+I76A	M	Other Musculoskeletal Disorders, Major Complexity
+I76B	M	Other Musculoskeletal Disorders, Intermediate Complexity
+I76C	M	Other Musculoskeletal Disorders, Minor Complexity
+I77A	M	Fractures of Pelvis, Major Complexity
+I77B	M	Fractures of Pelvis, Minor Complexity
+I78A	M	Fractures of Neck of Femur, Major Complexity
+I78B	M	Fractures of Neck of Femur, Minor Complexity
+I79A	M	Pathological Fractures, Major Complexity
+I79B	M	Pathological Fractures, Minor Complexity
+I80Z	M	Femoral Fractures, Transferred to Acute Facility <2 Days
+I81Z	M	Musculoskeletal Injuries, Sameday
+I82Z	M	Other Sameday Treatment for Musculoskeletal Disorders
+
+MDC 09 Diseases and Disorders of the Skin, Subcutaneous Tissue and Breast		
+J01A	S	Microvas Tiss Transf for Skin, Subcut Tiss & Breast Dsrds, Major Complexity
+J01B	S	Microvas Tiss Transf for Skin, Subcut Tiss & Breast Dsrds, Minor Complexity
+J06A	S	Major Procedures for Breast Disorders, Major Complexity
+J06B	S	Major Procedures for Breast Disorders, Minor Complexity
+J07A	S	Minor Procedures for Breast Disorders, Major Complexity
+J07B	S	Minor Procedures for Breast Disorders, Minor Complexity
+J08A	S	Other Skin Grafts and Debridement Procedures, Major Complexity
+J08B	S	Other Skin Grafts and Debridement Procedures, Intermediate Complexity
+J08C	S	Other Skin Grafts and Debridement Procedures, Minor Complexity
+J09Z	S	Perianal and Pilonidal Procedures
+J10A	S	Plastic OR Procs for Skin, Subcutaneous Tissue and Breast Disorders, Major Comp
+J10B	S	Plastic OR Procs for Skin, Subcutaneous Tissue and Breast Disorders, Minor Comp
+J11A	S	Other Skin, Subcutaneous Tissue and Breast Procedures, Major Complexity
+J11B	S	Other Skin, Subcutaneous Tissue and Breast Procedures, Minor Complexity
+J12A	S	Lower Limb Procedures W Ulcer or Cellulitis, Major Complexity
+J12B	S	Lower Limb Procedures W Ulcer or Cellulitis, Minor Complexity
+J13A	S	Lower Limb Procedures W/O Ulcer or Cellulitis, Major Complexity
+J13B	S	Lower Limb Procedures W/O Ulcer or Cellulitis, Minor Complexity
+J14Z	S	Major Breast Reconstructions
+J60A	M	Skin Ulcers, Major Complexity
+J60B	M	Skin Ulcers, Intermediate Complexity
+J60C	M	Skin Ulcers, Minor Complexity
+J62A	M	Malignant Breast Disorders, Major Complexity
+J62B	M	Malignant Breast Disorders, Minor Complexity
+J63A	M	Non-Malignant Breast Disorders, Major Complexity
+J63B	M	Non-Malignant Breast Disorders, Minor Complexity
+J64A	M	Cellulitis, Major Complexity
+J64B	M	Cellulitis, Minor Complexity
+J65A	M	Trauma to Skin, Subcutaneous Tissue and Breast, Major Complexity
+J65B	M	Trauma to Skin, Subcutaneous Tissue and Breast, Minor Complexity
+J67A	M	Minor Skin Disorders, Major Complexity
+J67B	M	Minor Skin Disorders, Minor Complexity
+J68A	M	Major Skin Disorders, Major Complexity
+J68B	M	Major Skin Disorders, Minor Complexity
+J69A	M	Skin Malignancy, Major Complexity
+J69B	M	Skin Malignancy, Intermediate Complexity
+J69C	M	Skin Malignancy, Minor Complexity
+
+MDC 10 Endocrine, Nutritional and Metabolic Diseases and Disorders		
+K01A	S	OR Procedures for Diabetic Complications, Major Complexity
+K01B	S	OR Procedures for Diabetic Complications, Intermediate Complexity
+K01C	S	OR Procedures for Diabetic Complications, Minor Complexity
+K02A	S	Pituitary Procedures, Major Complexity
+K02B	S	Pituitary Procedures, Minor Complexity
+K03Z	S	Adrenal Procedures
+K05A	S	Parathyroid Procedures, Major Complexity
+K05B	S	Parathyroid Procedures, Minor Complexity
+K06A	S	Thyroid Procedures, Major Complexity
+K06B	S	Thyroid Procedures, Minor Complexity
+K08Z	S	Thyroglossal Procedures
+K09A	S	Other Endocrine, Nutritional and Metabolic OR Procedures, Major Complexity
+K09B	S	Other Endocrine, Nutritional and Metabolic OR Procedures, Minor Complexity
+K10A	S	Revisional and Open Bariatric Procedures, Major Complexity
+K10B	S	Revisional and Open Bariatric Procedures, Minor Complexity
+K11A	S	Major Laparoscopic Bariatric Procedures, Major Complexity
+K11B	S	Major Laparoscopic Bariatric Procedures, Minor Complexity
+K12A	S	Other Bariatric Procedures, Major Complexity
+K12B	S	Other Bariatric Procedures, Minor Complexity
+K13Z	S	Plastic OR Procedures for Endocrine, Nutritional and Metabolic Disorders
+K40A	O	Endoscopic and Investigative Procedures for Metabolic Disorders, Major Comp
+K40B	O	Endoscopic and Investigative Procedures for Metabolic Disorders, Minor Comp
+K60A	M	Diabetes, Major Complexity
+K60B	M	Diabetes, Minor Complexity
+K61A	M	Severe Nutritional Disturbance, Major Complexity
+K61B	M	Severe Nutritional Disturbance, Minor Complexity
+K62A	M	Miscellaneous Metabolic Disorders, Major Complexity
+K62B	M	Miscellaneous Metabolic Disorders, Intermediate Complexity
+K62C	M	Miscellaneous Metabolic Disorders, Minor Complexity
+K63A	M	Inborn Errors of Metabolism, Major Complexity
+K63B	M	Inborn Errors of Metabolism, Minor Complexity
+K64A	M	Endocrine Disorders, Major Complexity
+K64B	M	Endocrine Disorders, Minor Complexity
+
+MDC 11 Diseases and Disorders of the Kidney and Urinary Tract		
+L02A	S	Operative Insertion of Peritoneal Catheter for Dialysis, Major Complexity
+L02B	S	Operative Insertion of Peritoneal Catheter for Dialysis, Minor Complexity
+L03A	S	Kidney, Ureter and Major Bladder Procedures for Neoplasm, Major Complexity
+L03B	S	Kidney, Ureter and Major Bladder Procedures for Neoplasm, Intermediate Comp
+L03C	S	Kidney, Ureter and Major Bladder Procedures for Neoplasm, Minor Complexity
+L04A	S	Kidney, Ureter and Major Bladder Procedures for Non-Neoplasm, Major Complexity
+L04B	S	Kidney, Ureter and Major Bladder Procedures for Non-Neoplasm, Intermediate Comp
+L04C	S	Kidney, Ureter and Major Bladder Procedures for Non-Neoplasm, Minor Complexity
+L05A	S	Transurethral Prostatectomy for Urinary Disorder, Major Complexity
+L05B	S	Transurethral Prostatectomy for Urinary Disorder, Minor Complexity
+L06A	S	Minor Bladder Procedures, Major Complexity
+L06B	S	Minor Bladder Procedures, Intermediate Complexity
+L06C	S	Minor Bladder Procedures, Minor Complexity
+L07A	S	Other Transurethral Procedures, Major Complexity
+L07B	S	Other Transurethral Procedures, Minor Complexity
+L08A	S	Urethral Procedures, Major Complexity
+L08B	S	Urethral Procedures, Minor Complexity
+L09A	S	Other Procedures for Kidney and Urinary Tract Disorders, Major Complexity
+L09B	S	Other Procedures for Kidney and Urinary Tract Disorders, Intermediate Complexity
+L09C	S	Other Procedures for Kidney and Urinary Tract Disorders, Minor Complexity
+L40Z	O	Ureteroscopy
+L41Z	O	Cystourethroscopy for Urinary Disorder, Sameday
+L42Z	O	ESW Lithotripsy
+L60A	M	Kidney Failure, Major Complexity
+L60B	M	Kidney Failure, Intermediate Complexity
+L60C	M	Kidney Failure, Minor Complexity
+L61Z	M	Haemodialysis
+L62A	M	Kidney and Urinary Tract Neoplasms, Major Complexity
+L62B	M	Kidney and Urinary Tract Neoplasms, Minor Complexity
+L63A	M	Kidney and Urinary Tract Infections, Major Complexity
+L63B	M	Kidney and Urinary Tract Infections, Minor Complexity
+L64A	M	Urinary Stones and Obstruction, Major Complexity
+L64B	M	Urinary Stones and Obstruction, Minor Complexity
+L65A	M	Kidney and Urinary Tract Signs and Symptoms, Major Complexity
+L65B	M	Kidney and Urinary Tract Signs and Symptoms, Minor Complexity
+L66Z	M	Urethral Stricture
+L67A	M	Other Kidney and Urinary Tract Disorders, Major Complexity
+L67B	M	Other Kidney and Urinary Tract Disorders, Intermediate Complexity
+L67C	M	Other Kidney and Urinary Tract Disorders, Minor Complexity
+L68Z	M	Peritoneal Dialysis
+
+MDC 12 Diseases and Disorders of the Male Reproductive System		
+M01A	S	Major Male Pelvic Procedures, Major Complexity
+M01B	S	Major Male Pelvic Procedures, Minor Complexity
+M02A	S	Transurethral Prostatectomy for Reproductive System Disorder, Major Complexity
+M02B	S	Transurethral Prostatectomy for Reproductive System Disorder, Minor Complexity
+M03A	S	Penis Procedures, Major Complexity
+M03B	S	Penis Procedures, Minor Complexity
+M04Z	S	Testes Procedures
+M05Z	S	Circumcision
+M06A	S	Other Male Reproductive System OR Procedures, Major Complexity
+M06B	S	Other Male Reproductive System OR Procedures, Minor Complexity
+M40Z	O	Cystourethroscopy for Male Reproductive System Disorder, Sameday
+M60A	M	Male Reproductive System Malignancy, Major Complexity
+M60B	M	Male Reproductive System Malignancy, Minor Complexity
+M61A	M	Benign Prostatic Hypertrophy, Major Complexity
+M61B	M	Benign Prostatic Hypertrophy, Minor Complexity
+M62A	M	Male Reproductive System Inflammation, Major Complexity
+M62B	M	Male Reproductive System Inflammation, Minor Complexity
+M63Z	M	Male Sterilisation Procedures
+M64A	M	Other Male Reproductive System Disorders, Major Complexity
+M64B	M	Other Male Reproductive System Disorders, Minor Complexity
+
+MDC 13 Diseases and Disorders of the Female Reproductive System		
+N01A	S	Pelvic Evisceration and Radical Vulvectomy, Major Complexity
+N01B	S	Pelvic Evisceration and Radical Vulvectomy, Minor Complexity
+N04A	S	Hysterectomy for Non-Malignancy, Major Complexity
+N04B	S	Hysterectomy for Non-Malignancy, Minor Complexity
+N05A	S	Oophorectomy and Complex Fallopian Tube Procedures for Non-Malignancy, Maj Comp
+N05B	S	Oophorectomy and Complex Fallopian Tube Procedures for Non-Malignancy, Min Comp
+N06A	S	Female Reproductive System Reconstructive Procedures, Major Complexity
+N06B	S	Female Reproductive System Reconstructive Procedures, Minor Complexity
+N07A	S	Other Uterus and Adnexa Procedures for Non-Malignancy, Major Complexity
+N07B	S	Other Uterus and Adnexa Procedures for Non-Malignancy, Minor Complexity
+N08Z	S	Endoscopic and Laparoscopic Procedures, Female Reproductive System
+N09Z	S	Other Vagina, Cervix and Vulva Procedures
+N10Z	S	Diagnostic Curettage and Diagnostic Hysteroscopy
+N11A	S	Other Female Reproductive System OR Procedures, Major Complexity
+N11B	S	Other Female Reproductive System OR Procedures, Minor Complexity
+N12A	S	Uterus and Adnexa Procedures for Malignancy, Major Complexity
+N12B	S	Uterus and Adnexa Procedures for Malignancy, Intermediate Complexity
+N12C	S	Uterus and Adnexa Procedures for Malignancy, Minor Complexity
+N60A	M	Female Reproductive System Malignancy, Major Complexity
+N60B	M	Female Reproductive System Malignancy, Minor Complexity
+N61A	M	Female Reproductive System Infections, Major Complexity
+N61B	M	Female Reproductive System Infections, Minor Complexity
+N62A	M	Menstrual and Other Female Reproductive System Disorders, Major Complexity
+N62B	M	Menstrual and Other Female Reproductive System Disorders, Minor Complexity
+
+MDC 14 Pregnancy, Childbirth and the Puerperium		
+O01A	S	Caesarean Delivery, Major Complexity
+O01B	S	Caesarean Delivery, Intermediate Complexity
+O01C	S	Caesarean Delivery, Minor Complexity
+O02A	S	Vaginal Delivery W OR Procedures, Major Complexity
+O02B	S	Vaginal Delivery W OR Procedures, Minor Complexity
+O03A	S	Ectopic Pregnancy, Major Complexity
+O03B	S	Ectopic Pregnancy, Minor Complexity
+O04A	S	Postpartum and Post Abortion W OR Procedures, Major Complexity
+O04B	S	Postpartum and Post Abortion W OR Procedures, Minor Complexity
+O05Z	S	Abortion W OR Procedures
+O60A	M	Vaginal Delivery, Major Complexity
+O60B	M	Vaginal Delivery, Intermediate Complexity
+O60C	M	Vaginal Delivery, Minor Complexity
+O61A	M	Postpartum and Post Abortion W/O OR Procedures, Major Complexity
+O61B	M	Postpartum and Post Abortion W/O OR Procedures, Minor Complexity
+O63A	M	Abortion W/O OR Procedures, Major Complexity
+O63B	M	Abortion W/O OR Procedures, Minor Complexity
+O66A	M	Antenatal and Other Obstetric Admissions, Major Complexity
+O66B	M	Antenatal and Other Obstetric Admissions, Minor Complexity
+
+MDC 15 Newborns and Other Neonates		
+P01Z	S	Neonate W Sig OR Proc/Vent>=96hrs, Died or Transfer to Acute Facility <5Days
+P02Z	S	Cardiothoracic and Vascular Procedures for Neonates
+P03A	S	Neonate, AdmWt 1000-1499g W Significant OR Proc/Vent>=96hrs, Major Complexity
+P03B	S	Neonate, AdmWt 1000-1499g W Significant OR Proc/Vent>=96hrs, Minor Complexity
+P04A	S	Neonate, AdmWt 1500-1999g W Significant OR Proc/Vent>=96hrs, Major Complexity
+P04B	S	Neonate, AdmWt 1500-1999g W Significant OR Proc/Vent>=96hrs, Minor Complexity
+P05A	S	Neonate, AdmWt 2000-2499g W Significant OR Proc/Vent>=96hrs, Major Complexity
+P05B	S	Neonate, AdmWt 2000-2499g W Significant OR Proc/Vent>=96hrs, Minor Complexity
+P06A	S	Neonate, AdmWt >=2500g W Significant OR Proc/Vent>=96hrs, Major Complexity
+P06B	S	Neonate, AdmWt >=2500g W Significant OR Proc/Vent>=96hrs, Minor Complexity
+P07Z	S	Neonate, AdmWt <750g W Significant OR Procedures
+P08Z	S	Neonate, AdmWt 750-999g W Significant OR Procedures
+P60A	M	Neonate W/O Sig OR/Vent>=96hrs, Died/Transfer Acute Facility <5 Days, MajC
+P60B	M	Neonate W/O Sig OR/Vent>=96hrs, Died/Transfer Acute Facility <5 Days, MinC
+P61Z	M	Neonate, AdmWt <750g W/O Significant OR procedure
+P62A	M	Neonate, AdmWt 750-999g W/O Significant OR Procedures, Major Complexity
+P62B	M	Neonate, AdmWt 750-999g W/O Significant OR Procedures, Minor Complexity
+P63A	M	Neonate, AdmWt 1000-1249g W/O Significant OR Proc/Vent>=96hrs, Major Complexity
+P63B	M	Neonate, AdmWt 1000-1249g W/O Significant OR Proc/Vent>=96hrs, Minor Complexity
+P64A	M	Neonate, AdmWt 1250-1499g W/O Significant OR Proc/Vent>=96hrs, Major Complexity
+P64B	M	Neonate, AdmWt 1250-1499g W/O Significant OR Proc/Vent>=96hrs, Minor Complexity
+P65A	M	Neonate, AdmWt 1500-1999g W/O Significant OR Proc/Vent>=96hrs, Extreme Comp
+P65B	M	Neonate, AdmWt 1500-1999g W/O Significant OR Proc/Vent>=96hrs, Major Complexity
+P65C	M	Neonate, AdmWt 1500-1999g W/O Significant OR Proc/Vent>=96hrs, Intermediate Comp
+P65D	M	Neonate, AdmWt 1500-1999g W/O Significant OR Proc/Vent>=96hrs, Minor Complexity
+P66A	M	Neonate, AdmWt 2000-2499g W/O Significant OR Proc/Vent>=96hrs, Extreme Comp
+P66B	M	Neonate, AdmWt 2000-2499g W/O Significant OR Proc/Vent>=96hrs, Major Complexity
+P66C	M	Neonate, AdmWt 2000-2499g W/O Significant OR Proc/Vent>=96hrs, Intermediate Comp
+P66D	M	Neonate, AdmWt 2000-2499g W/O Significant OR Proc/Vent>=96hrs, Minor Complexity
+P67A	M	Neonate, AdmWt >=2500g W/O Sig OR Proc/Vent>=96hrs, <37 Comp Wks Gest, Extr Comp
+P67B	M	Neonate, AdmWt >=2500g W/O Sig OR Proc/Vent>=96hrs, <37 Comp Wks Gest, Maj Comp
+P67C	M	Neonate, AdmWt >=2500g W/O Sig OR Proc/Vent>=96hrs, <37 Comp Wks Gest, Int Comp
+P67D	M	Neonate, AdmWt >=2500g W/O Sig OR Proc/Vent>=96hrs, <37 Comp Wks Gest, Min Comp
+P68A	M	Neonate, AdmWt >=2500g W/O Sig OR Proc/Vent>=96hrs, >=37 Comp Wks Gest, Ext Comp
+P68B	M	Neonate, AdmWt >=2500g W/O Sig OR Proc/Vent>=96hrs, >=37 Comp Wks Gest, Maj Comp
+P68C	M	Neonate, AdmWt >=2500g W/O Sig OR Proc/Vent>=96hrs, >=37 Comp Wks Gest, Int Comp
+P68D	M	Neonate, AdmWt >=2500g W/O Sig OR Proc/Vent>=96hrs, >=37 Comp Wks Gest, Min Comp
+
+MDC 16 Diseases and Disorders of Blood, Blood Forming Organs, Immunological Disorders		
+Q01A	S	Splenectomy, Major Complexity
+Q01B	S	Splenectomy, Minor Complexity
+Q02A	S	Blood and Immune System Disorders W Other OR Procedures, Major Complexity
+Q02B	S	Blood and Immune System Disorders W Other OR Procedures, Minor Complexity
+Q60A	M	Reticuloendothelial and Immunity Disorders, Major Complexity
+Q60B	M	Reticuloendothelial and Immunity Disorders, Minor Complexity
+Q61A	M	Red Blood Cell Disorders, Major Complexity
+Q61B	M	Red Blood Cell Disorders, Intermediate Complexity
+Q61C	M	Red Blood Cell Disorders, Minor Complexity
+Q62A	M	Coagulation Disorders, Major Complexity
+Q62B	M	Coagulation Disorders, Minor Complexity
+
+MDC 17 Neoplastic Disorders (Haematological and Solid Neoplasms)		
+R01A	S	Lymphoma and Leukaemia W Major OR Procedures, Major Complexity
+R01B	S	Lymphoma and Leukaemia W Major OR Procedures, Minor Complexity
+R02A	S	Other Neoplastic Disorders W Major OR Procedures, Major Complexity
+R02B	S	Other Neoplastic Disorders W Major OR Procedures, Intermediate Complexity
+R02C	S	Other Neoplastic Disorders W Major OR Procedures, Minor Complexity
+R03A	S	Lymphoma and Leukaemia W Other OR Procedures, Major Complexity
+R03B	S	Lymphoma and Leukaemia W Other OR Procedures, Intermediate Complexity
+R03C	S	Lymphoma and Leukaemia W Other OR Procedures, Minor Complexity
+R04A	S	Other Neoplastic Disorders W Other OR Procedures, Major Complexity
+R04B	S	Other Neoplastic Disorders W Other OR Procedures, Minor Complexity
+R60A	M	Acute Leukaemia, Major Complexity
+R60B	M	Acute Leukaemia, Minor Complexity
+R61A	M	Lymphoma and Non-Acute Leukaemia, Major Complexity
+R61B	M	Lymphoma and Non-Acute Leukaemia, Minor Complexity
+R62A	M	Other Neoplastic Disorders, Major Complexity
+R62B	M	Other Neoplastic Disorders, Intermediate Complexity
+R62C	M	Other Neoplastic Disorders, Minor Complexity
+R63Z	M	Chemotherapy
+
+MDC 18 Infectious and Parasitic Diseases, Systemic or Unspecified Sites		
+S65A	M	Human Immunodeficiency Virus, Major Complexity
+S65B	M	Human Immunodeficiency Virus, Intermediate Complexity
+S65C	M	Human Immunodeficiency Virus, Minor Complexity
+T01A	S	Infectious and Parasitic Diseases W OR Procedures, Major Complexity
+T01B	S	Infectious and Parasitic Diseases W OR Procedures, Intermediate Complexity
+T01C	S	Infectious and Parasitic Diseases W OR Procedures, Minor Complexity
+T40Z	O	Infectious and Parasitic Diseases W Ventilator Support
+T60A	M	Septicaemia, Major Complexity
+T60B	M	Septicaemia, Intermediate Complexity
+T60C	M	Septicaemia, Minor Complexity
+T61A	M	Postoperative and Post-Traumatic Infections, Major Complexity
+T61B	M	Postoperative and Post-Traumatic Infections, Minor Complexity
+T62A	M	Fever of Unknown Origin, Major Complexity
+T62B	M	Fever of Unknown Origin, Minor Complexity
+T63A	M	Viral Illnesses, Major Complexity
+T63B	M	Viral Illnesses, Minor Complexity
+T64A	M	Other Infectious and Parasitic Diseases, Major Complexity
+T64B	M	Other Infectious and Parasitic Diseases, Intermediate Complexity
+T64C	M	Other Infectious and Parasitic Diseases, Minor Complexity
+
+MDC 19 Mental Diseases and Disorders		
+U40Z	O	Mental Health Treatment W ECT, Sameday
+U60A	M	Mental Health Treatment W/O ECT, Sameday, Major Complexity
+U60B	M	Mental Health Treatment W/O ECT, Sameday, Minor Complexity
+U61A	M	Schizophrenia Disorders, Major Complexity
+U61B	M	Schizophrenia Disorders, Minor Complexity
+U62A	M	Paranoia and Acute Psychotic Disorders, Major Complexity
+U62B	M	Paranoia and Acute Psychotic Disorders, Minor Complexity
+U63A	M	Major Affective Disorders, Major Complexity
+U63B	M	Major Affective Disorders, Minor Complexity
+U64A	M	Other Affective and Somatoform Disorders, Major Complexity
+U64B	M	Other Affective and Somatoform Disorders, Minor Complexity
+U65A	M	Anxiety Disorders, Major Complexity
+U65B	M	Anxiety Disorders, Minor Complexity
+U66A	M	Eating and Obsessive-Compulsive Disorders, Major Complexity
+U66B	M	Eating and Obsessive-Compulsive Disorders, Minor Complexity
+U67A	M	Personality Disorders and Acute Reactions, Major Complexity
+U67B	M	Personality Disorders and Acute Reactions, Minor Complexity
+U68A	M	Childhood Mental Disorders, Major Complexity
+U68B	M	Childhood Mental Disorders, Minor Complexity
+
+MDC 20 Alcohol/Drug Use and Alcohol/Drug Induced Organic Mental Disorders		
+V60A	M	Alcohol Intoxication and Withdrawal, Major Complexity
+V60B	M	Alcohol Intoxication and Withdrawal, Minor Complexity
+V61A	M	Drug Intoxication and Withdrawal, Major Complexity
+V61B	M	Drug Intoxication and Withdrawal, Minor Complexity
+V62A	M	Alcohol Use and Dependence, Major Complexity
+V62B	M	Alcohol Use and Dependence, Minor Complexity
+V63Z	M	Opioid Use and Dependence
+V64Z	M	Other Drug Use and Dependence
+V65Z	M	Treatment for Alcohol Disorders, Sameday
+V66Z	M	Treatment for Drug Disorders, Sameday
+
+MDC 21 Injuries, Poisonings and Toxic Effects of Drugs		
+W01A	S	Vent, Trac & Cran Procs for Mult Sig Trauma, Major Complexity
+W01B	S	Vent, Trac & Cran Procs for Mult Sig Trauma, Intermediate Complexity
+W01C	S	Vent, Trac & Cran Procs for Mult Sig Trauma, Minor Complexity
+W02A	S	Hip, Femur and Lower Limb Procedures for Multiple Sig Trauma, Major Complexity
+W02B	S	Hip, Femur and Lower Limb Procedures for Multiple Sig Trauma, Minor Complexity
+W03Z	S	Abdominal Procedures for Multiple Significant Trauma
+W04A	S	Multiple Significant Trauma W Other OR Procedures, Major Complexity
+W04B	S	Multiple Significant Trauma W Other OR Procedures, Minor Complexity
+W60A	M	Multiple Sig Trauma, Died or Transferred to Acute Facility <5 Days, Major Comp
+W60B	M	Multiple Sig Trauma, Died or Transferred to Acute Facility <5 Days, Minor Comp
+W61A	M	Multiple Significant Trauma W/O OR Procedures, Major Complexity
+W61B	M	Multiple Significant Trauma W/O OR Procedures, Minor Complexity
+X02A	S	Microvascular Tissue Transfer and Skin Grafts for Injuries to Hand, Major Comp
+X02B	S	Microvascular Tissue Transfer and Skin Grafts for Injuries to Hand, Minor Comp
+X04A	S	Other Procedures for Injuries to Lower Limb, Major Complexity
+X04B	S	Other Procedures for Injuries to Lower Limb, Minor Complexity
+X05A	S	Other Procedures for Injuries to Hand, Major Complexity
+X05B	S	Other Procedures for Injuries to Hand, Minor Complexity
+X06A	S	Other Procedures for Other Injuries, Major Complexity
+X06B	S	Other Procedures for Other Injuries, Intermediate Complexity
+X06C	S	Other Procedures for Other Injuries, Minor Complexity
+X07A	S	Skin Grafts for Injuries Excluding Hand, Major Complexity
+X07B	S	Skin Grafts for Injuries Excluding Hand, Intermediate Complexity
+X07C	S	Skin Grafts for Injuries Excluding Hand, Minor Complexity
+X40A	O	Injuries, Poisoning and Toxic Effects of Drugs W Ventilator Support, Major Comp
+X40B	O	Injuries, Poisoning and Toxic Effects of Drugs W Ventilator Support, Minor Comp
+X60A	M	Injuries, Major Complexity
+X60B	M	Injuries, Minor Complexity
+X61A	M	Allergic Reactions, Major Complexity
+X61B	M	Allergic Reactions, Minor Complexity
+X62A	M	Poisoning/Toxic Effects of Drugs and Other Substances, Major Complexity
+X62B	M	Poisoning/Toxic Effects of Drugs and Other Substances, Minor Complexity
+X63A	M	Sequelae of Treatment, Major Complexity
+X63B	M	Sequelae of Treatment, Minor Complexity
+X64A	M	Other Injuries, Poisonings and Toxic Effects, Major Complexity
+X64B	M	Other Injuries, Poisonings and Toxic Effects, Minor Complexity
+
+MDC 22 Burns		
+Y01Z	S	Vent >=96hrs or Trach for Burns or OR Procs for Severe Full Thickness Burns
+Y02A	S	Skin Grafts for Other Burns, Major Complexity
+Y02B	S	Skin Grafts for Other Burns, Intermediate Complexity
+Y02C	S	Skin Grafts for Other Burns, Minor Complexity
+Y03A	S	Other OR Procedures for Other Burns, Major Complexity
+Y03B	S	Other OR Procedures for Other Burns, Minor Complexity
+Y60Z	M	Burns, Transferred to Acute Facility <5 Days
+Y61Z	M	Severe Burns
+Y62A	M	Other Burns, Major Complexity
+Y62B	M	Other Burns, Minor Complexity
+
+MDC 23 Factors Influencing Health Status and Other Contacts with Health Services		
+Z01A	S	Other Contacts W Health Services W OR Procedures, Major Complexity
+Z01B	S	Other Contacts W Health Services W OR Procedures, Minor Complexity
+Z40Z	O	Other Contacts W Health Services W Endoscopy, Sameday
+Z60A	M	Rehabilitation, Major Complexity
+Z60B	M	Rehabilitation, Minor Complexity
+Z61A	M	Signs and Symptoms, Major Complexity
+Z61B	M	Signs and Symptoms, Intermediate Complexity
+Z61C	M	Signs and Symptoms, Minor Complexity
+Z63A	M	Other Follow Up After Surgery or Medical Care, Major Complexity
+Z63B	M	Other Follow Up After Surgery or Medical Care, Minor Complexity
+Z64A	M	Other Factors Influencing Health Status, Major Complexity
+Z64B	M	Other Factors Influencing Health Status, Minor Complexity
+Z65Z	M	Congenital Anomalies and Problems Arising from Neonatal Period
+Z66Z	M	Sleep Disorders
+
+Unrelated OR Procedures		
+801A	S	OR Procedures Unrelated to Principal Diagnosis, Major Complexity
+801B	S	OR Procedures Unrelated to Principal Diagnosis, Intermediate Complexity
+801C	S	OR Procedures Unrelated to Principal Diagnosis, Minor Complexity
+
+Error DRGs		
+960Z	M	Ungroupable
+961Z	M	Unacceptable Principal Diagnosis
+963Z	M	Neonatal Diagnosis Not Consistent W Age/Weight

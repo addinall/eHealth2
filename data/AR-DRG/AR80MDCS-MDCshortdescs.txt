@@ -1,0 +1,24 @@
+00,UNASSIGNABLE TO MDC                                                                    
+01,NERVOUS SYSTEM                                                                         
+02,EYE DISEASES & DISORDERS                                                               
+03,EAR, NOSE, MOUTH & THROAT                                                              
+04,RESPIRATORY SYSTEM                                                                     
+05,CIRCULATORY SYSTEM                                                                     
+06,DIGESTIVE SYSTEM                                                                       
+07,HEPATOBILIARY SYSTEM & PANCREAS                                                        
+08,MUSCULOSKELETAL SYS & CONN TISSUE                                                      
+09,SKIN, SUBCUTANEOUS TISSUE & BREAST                                                     
+10,ENDOCRINE, NUTRITIONAL & METABOLIC                                                     
+11,KIDNEY & URINARY TRACT                                                                 
+12,MALE REPRODUCTIVE SYSTEM                                                               
+13,FEMALE REPRODUCTIVE SYSTEM                                                             
+14,PREGNANCY, CHILDBIRTH & PUERPERIUM                                                     
+15,NEWBORNS & OTHER NEONATES                                                              
+16,BLOOD, BLOOD FORM ORGANS, IMMUNOLOG                                                    
+17,NEOPLASTIC DISORDERS                                                 M                 
+18,INFECTIOUS & PARASITIC DISEASES                                                        
+19,MENTAL DISEASES & DISORDERS                                                            
+20,ALCOHOL/DRUG USE DISORDERS                                                             
+21,INJURY, POISON & TOXIC EFFECT DRUGS                                                    
+22,BURNS                                                                                  
+23,FACTORS INFLUENCING HEALTH STATUS                                                      

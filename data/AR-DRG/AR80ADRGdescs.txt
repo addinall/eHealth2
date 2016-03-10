@@ -1,0 +1,412 @@
+ADRG List   Chart Version : V80 SPECS.
+Selection : "All"
+
+ADRG  Description
+801   OR Procedures Unrelated to Principal Diagnosis
+960   Ungroupable
+961   Unacceptable Principal Diagnosis
+963   Neonatal Diagnosis Not Consistent W Age/Weight
+A01   Liver Transplant
+A03   Lung or Heart-Lung Transplant
+A05   Heart Transplant
+A06   Tracheostomy and/or Ventilation >=96hours
+A07   Allogeneic Bone Marrow Transplant
+A08   Autologous Bone Marrow Transplant
+A09   Kidney Transplant
+A10   Insertion of Ventricular Assist Device
+A11   Insertion of Implantable Spinal Infusion Device
+A12   Insertion of Neurostimulator Device
+A40   ECMO
+B01   Ventricular Shunt Revision
+B02   Cranial Procedures
+B03   Spinal Procedures
+B04   Extracranial Vascular Procedures
+B05   Carpal Tunnel Release
+B06   Procedures for Cerebral Palsy, Muscular Dystrophy and Neuropathy
+B07   Cranial or Peripheral Nerve and Other Nervous System Procedures
+B40   Plasmapheresis W Neurological Disease, Sameday
+B41   Telemetric EEG Monitoring
+B42   Nervous System Disorders W Ventilator Support
+B60   Acute Paraplegia and Quadriplegia W or W/O OR Procedures
+B61   Spinal Cord Conditions W or W/O OR Procedures
+B62   Apheresis
+B63   Dementia and Other Chronic Disturbances of Cerebral Function
+B64   Delirium
+B65   Cerebral Palsy
+B66   Nervous System Neoplasms
+B67   Degenerative Nervous System Disorders
+B68   Multiple Sclerosis and Cerebellar Ataxia
+B69   TIA and Precerebral Occlusion
+B70   Stroke and Other Cerebrovascular Disorders
+B71   Cranial and Peripheral Nerve Disorders
+B72   Nervous System Infection Except Viral Meningitis
+B73   Viral Meningitis
+B74   Nontraumatic Stupor and Coma
+B75   Febrile Convulsions
+B76   Seizures
+B77   Headaches
+B78   Intracranial Injuries
+B79   Skull Fractures
+B80   Other Head Injuries
+B81   Other Disorders of the Nervous System
+B82   Chronic and Unspecified Paraplegia/Quadriplegia W or W/O OR Procedures
+C01   Procedures for Penetrating Eye Injury
+C02   Enucleations and Orbital Procedures
+C03   Retinal Procedures
+C04   Major Corneal, Scleral and Conjunctival Procedures
+C05   Dacryocystorhinostomy
+C10   Strabismus Procedures
+C11   Eyelid Procedures
+C12   Other Corneal, Scleral and Conjunctival Procedures
+C13   Lacrimal Procedures
+C14   Other Eye Procedures
+C15   Glaucoma and Complex Cataract Procedures
+C16   Lens Procedures
+C60   Acute and Major Eye Infections
+C61   Neurological and Vascular Disorders of the Eye
+C62   Hyphaema and Medically Managed Trauma to the Eye
+C63   Other Disorders of the Eye
+D01   Cochlear Implant
+D02   Head and Neck Procedures
+D03   Surgical Repair for Cleft Lip and Palate Disorders
+D04   Maxillo Surgery
+D05   Parotid Gland Procedures
+D06   Sinus and Complex Middle Ear Procedures
+D10   Nasal Procedures
+D11   Tonsillectomy and Adenoidectomy
+D12   Other Ear, Nose, Mouth and Throat Procedures
+D13   Myringotomy W Tube Insertion
+D14   Mouth and Salivary Gland Procedures
+D15   Mastoid Procedures
+D40   Dental Extractions and Restorations
+D60   Ear, Nose, Mouth and Throat Malignancy
+D61   Dysequilibrium
+D62   Epistaxis
+D63   Otitis Media and Upper Respiratory Infections
+D64   Laryngotracheitis and Epiglottitis
+D65   Nasal Trauma and Deformity
+D66   Other Ear, Nose, Mouth and Throat Disorders
+D67   Oral and Dental Disorders
+E01   Major Chest Procedures
+E02   Other Respiratory System OR Procedures
+E40   Respiratory System Disorders W Ventilator Support
+E41   Respiratory System Disorders W Non-Invasive Ventilation
+E42   Bronchoscopy
+E60   Cystic Fibrosis
+E61   Pulmonary Embolism
+E62   Respiratory Infections and Inflammations
+E63   Sleep Apnoea
+E64   Pulmonary Oedema and Respiratory Failure
+E65   Chronic Obstructive Airways Disease
+E66   Major Chest Trauma
+E67   Respiratory Signs and Symptoms
+E68   Pneumothorax
+E69   Bronchitis and Asthma
+E70   Whooping Cough and Acute Bronchiolitis
+E71   Respiratory Neoplasms
+E72   Respiratory Problems Arising from Neonatal Period
+E73   Pleural Effusion
+E74   Interstitial Lung Disease
+E75   Other Respiratory System Disorders
+E76   Respiratory Tuberculosis
+F01   Implantation and Replacement of AICD, Total System
+F02   Other AICD Procedures
+F03   Cardiac Valve Procedures W CPB Pump W Invasive Cardiac Investigation
+F04   Cardiac Valve Procedures W CPB Pump W/O Invasive Cardiac Investigation
+F05   Coronary Bypass W Invasive Cardiac Investigation
+F06   Coronary Bypass W/O Invasive Cardiac Investigation
+F07   Other Cardiothoracic/Vascular Procedures W CPB Pump
+F08   Major Reconstructive Vascular Procedures W/O CPB Pump
+F09   Other Cardiothoracic Procedures W/O CPB Pump
+F10   Interventional Coronary Procedures, Admitted for AMI
+F11   Amputation, Except Upper Limb and Toe, for Circulatory Disorders
+F12   Implantation and Replacement of Pacemaker, Total System
+F13   Amputation, Upper Limb and Toe, for Circulatory Disorders
+F14   Vascular Procedures, Except Major Reconstruction, W/O CPB Pump
+F15   Interventional Coronary Procedures, Not Admitted for AMI W Stent Implantation
+F16   Interventional Coronary Procedures, Not Admitted for AMI W/O Stent Implantation
+F17   Insertion and Replacement of Pacemaker Generator
+F18   Other Pacemaker Procedures
+F19   Trans-Vascular Percutaneous Cardiac Intervention
+F20   Vein Ligation and Stripping
+F21   Other Circulatory System OR Procedures
+F40   Circulatory Disorders W Ventilator Support
+F41   Circulatory Disorders, Admitted for AMI W Invasive Cardiac Investigative Procs
+F42   Circulatory Disorders, Not Admitted for AMI W Invasive Cardiac Investig Procs
+F43   Circulatory Disorders W Non-Invasive Ventilation
+F60   Circulatory Disorders, Admitted for AMI W/O Invasive Cardiac Investigative Procs
+F61   Infective Endocarditis
+F62   Heart Failure and Shock
+F63   Venous Thrombosis
+F64   Skin Ulcers in Circulatory Disorders
+F65   Peripheral Vascular Disorders
+F66   Coronary Atherosclerosis
+F67   Hypertension
+F68   Congenital Heart Disease
+F69   Valvular Disorders
+F72   Unstable Angina
+F73   Syncope and Collapse
+F74   Chest Pain
+F75   Other Circulatory Disorders
+F76   Arrhythmia, Cardiac Arrest and Conduction Disorders
+G01   Rectal Resection
+G02   Major Small and Large Bowel Procedures
+G03   Stomach, Oesophageal and Duodenal Procedures
+G04   Peritoneal Adhesiolysis
+G05   Minor Small and Large Bowel Procedures
+G06   Pyloromyotomy
+G07   Appendicectomy
+G10   Hernia Procedures
+G11   Anal and Stomal Procedures
+G12   Other Digestive System OR Procedures
+G46   Complex Endoscopy
+G47   Gastroscopy
+G48   Colonoscopy
+G60   Digestive Malignancy
+G61   Gastrointestinal Haemorrhage
+G64   Inflammatory Bowel Disease
+G65   Gastrointestinal Obstruction
+G66   Abdominal Pain and Mesenteric Adenitis
+G67   Oesophagitis and Gastroenteritis
+G70   Other Digestive System Disorders
+H01   Pancreas, Liver and Shunt Procedures
+H02   Major Biliary Tract Procedures
+H05   Hepatobiliary Diagnostic Procedures
+H06   Other Hepatobiliary and Pancreas OR Procedures
+H07   Open Cholecystectomy
+H08   Laparoscopic Cholecystectomy
+H40   Endoscopic Procedures for Bleeding Oesophageal Varices
+H43   ERCP Procedures
+H60   Cirrhosis and Alcoholic Hepatitis
+H61   Malignancy of Hepatobiliary System and Pancreas
+H62   Disorders of Pancreas, Except Malignancy
+H63   Other Disorders of Liver
+H64   Disorders of the Biliary Tract
+I01   Bilateral and Multiple Major Joint Procedures of Lower Limb
+I02   Microvascular Tissue Transfers or Skin Grafts, Excluding Hand
+I03   Hip Replacement
+I04   Knee Replacement
+I05   Other Joint Replacement
+I06   Spinal Fusion for Deformity
+I07   Amputation
+I08   Other Hip and Femur Procedures
+I09   Spinal Fusion
+I10   Other Back and Neck Procedures
+I11   Limb Lengthening Procedures
+I12   Miscellaneous Musculoskeletal Procs for Infection/Inflammation of Bone and Joint
+I13   Humerus, Tibia, Fibula and Ankle Procedures
+I15   Cranio-Facial Surgery
+I16   Other Shoulder Procedures
+I17   Maxillo-Facial Surgery
+I18   Other Knee Procedures
+I19   Other Elbow and Forearm Procedures
+I20   Other Foot Procedures
+I21   Local Excision and Removal of Internal Fixation Devices of Hip and Femur
+I23   Local Excision and Removal of Internal Fixation Devices, Except Hip and Femur
+I24   Arthroscopy
+I25   Bone and Joint Diagnostic Procedures Including Biopsy
+I27   Soft Tissue Procedures
+I28   Other Musculoskeletal Procedures
+I29   Knee Reconstructions, and Revisions of Reconstructions
+I30   Hand Procedures
+I31   Revision of Hip Replacement
+I32   Revision of Knee Replacement
+I40   Infusions for Musculoskeletal Disorders, Sameday
+I60   Femoral Shaft Fractures
+I61   Distal Femoral Fractures
+I63   Sprains, Strains and Dislocations of Hip, Pelvis and Thigh
+I64   Osteomyelitis
+I65   Musculoskeletal Malignant Neoplasms
+I66   Inflammatory Musculoskeletal Disorders
+I67   Septic Arthritis
+I68   Non-surgical Spinal Disorders
+I69   Bone Diseases and Arthropathies
+I71   Other Musculotendinous Disorders
+I72   Specific Musculotendinous Disorders
+I73   Aftercare of Musculoskeletal Implants or Prostheses
+I74   Injuries to Forearm, Wrist, Hand and Foot
+I75   Injuries to Shoulder, Arm, Elbow, Knee, Leg and Ankle
+I76   Other Musculoskeletal Disorders
+I77   Fractures of Pelvis
+I78   Fractures of Neck of Femur
+I79   Pathological Fractures
+I80   Femoral Fractures, Transferred to Acute Facility <2 Days
+I81   Musculoskeletal Injuries, Sameday
+I82   Other Sameday Treatment for Musculoskeletal Disorders
+J01   Microvascular Tissue Transfers for Skin, Subcutaneous Tissue & Breast Disorders
+J06   Major Procedures for Breast Disorders
+J07   Minor Procedures for Breast Disorders
+J08   Other Skin Grafts and Debridement Procedures
+J09   Perianal and Pilonidal Procedures
+J10   Plastic OR Procedures for Skin, Subcutaneous Tissue and Breast Disorders
+J11   Other Skin, Subcutaneous Tissue and Breast Procedures
+J12   Lower Limb Procedures W Ulcer or Cellulitis
+J13   Lower Limb Procedures W/O Ulcer or Cellulitis
+J14   Major Breast Reconstructions
+J60   Skin Ulcers
+J62   Malignant Breast Disorders
+J63   Non-Malignant Breast Disorders
+J64   Cellulitis
+J65   Trauma to Skin, Subcutaneous Tissue and Breast
+J67   Minor Skin Disorders
+J68   Major Skin Disorders
+J69   Skin Malignancy
+K01   OR Procedures for Diabetic Complications
+K02   Pituitary Procedures
+K03   Adrenal Procedures
+K05   Parathyroid Procedures
+K06   Thyroid Procedures
+K08   Thyroglossal Procedures
+K09   Other Endocrine, Nutritional and Metabolic OR Procedures
+K10   Revisional and Open Bariatric Procedures
+K11   Major Laparoscopic Bariatric Procedures
+K12   Other Bariatric Procedures
+K13   Plastic OR Procedures for Endocrine, Nutritional and Metabolic Disorders
+K40   Endoscopic and Investigative Procedures for Metabolic Disorders
+K60   Diabetes
+K61   Severe Nutritional Disturbance
+K62   Miscellaneous Metabolic Disorders
+K63   Inborn Errors of Metabolism
+K64   Endocrine Disorders
+L02   Operative Insertion of Peritoneal Catheter for Dialysis
+L03   Kidney, Ureter and Major Bladder Procedures for Neoplasm
+L04   Kidney, Ureter and Major Bladder Procedures for Non-Neoplasm
+L05   Transurethral Prostatectomy for Urinary Disorder
+L06   Minor Bladder Procedures
+L07   Other Transurethral Procedures
+L08   Urethral Procedures
+L09   Other Procedures for Kidney and Urinary Tract Disorders
+L40   Ureteroscopy
+L41   Cystourethroscopy for Urinary Disorder, Sameday
+L42   ESW Lithotripsy
+L60   Kidney Failure
+L61   Haemodialysis
+L62   Kidney and Urinary Tract Neoplasms
+L63   Kidney and Urinary Tract Infections
+L64   Urinary Stones and Obstruction
+L65   Kidney and Urinary Tract Signs and Symptoms
+L66   Urethral Stricture
+L67   Other Kidney and Urinary Tract Disorders
+L68   Peritoneal Dialysis
+M01   Major Male Pelvic Procedures
+M02   Transurethral Prostatectomy for Reproductive System Disorder
+M03   Penis Procedures
+M04   Testes Procedures
+M05   Circumcision
+M06   Other Male Reproductive System OR Procedures
+M40   Cystourethroscopy for Male Reproductive System Disorder, Sameday
+M60   Male Reproductive System Malignancy
+M61   Benign Prostatic Hypertrophy
+M62   Male Reproductive System Inflammation
+M63   Male Sterilisation Procedures
+M64   Other Male Reproductive System Disorders
+N01   Pelvic Evisceration and Radical Vulvectomy
+N04   Hysterectomy for Non-Malignancy
+N05   Oophorectomy and Complex Fallopian Tube Procedures for Non-Malignancy
+N06   Female Reproductive System Reconstructive Procedures
+N07   Other Uterus and Adnexa Procedures for Non-Malignancy
+N08   Endoscopic and Laparoscopic Procedures, Female Reproductive System
+N09   Other Vagina, Cervix and Vulva Procedures
+N10   Diagnostic Curettage and Diagnostic Hysteroscopy
+N11   Other Female Reproductive System OR Procedures
+N12   Uterus and Adnexa Procedures for Malignancy
+N60   Female Reproductive System Malignancy
+N61   Female Reproductive System Infections
+N62   Menstrual and Other Female Reproductive System Disorders
+O01   Caesarean Delivery
+O02   Vaginal Delivery W OR Procedures
+O03   Ectopic Pregnancy
+O04   Postpartum and Post Abortion W OR Procedures
+O05   Abortion W OR Procedures
+O60   Vaginal Delivery
+O61   Postpartum and Post Abortion W/O OR Procedures
+O63   Abortion W/O OR Procedures
+O66   Antenatal and Other Obstetric Admissions
+P01   Neonate W Sig OR Proc or Vent>=96hrs, Died or Transfer to Acute Facility <5 Days
+P02   Cardiothoracic and Vascular Procedures for Neonates
+P03   Neonate, AdmWt 1000-1499g W Significant OR Procedure or Ventilation >=96hours
+P04   Neonate, AdmWt 1500-1999g W Significant OR Procedure or Ventilation >=96hours
+P05   Neonate, AdmWt 2000-2499g W Significant OR Procedure or Ventilation >=96hours
+P06   Neonate, AdmWt >=2500g W Significant OR Procedure or Ventilation >=96hours
+P07   Neonate, AdmWt <750g W Significant OR Procedure
+P08   Neonate, AdmWt 750-999g W Significant OR Procedure
+P60   Neonate W/O Sig OR or Vent>=96hrs, Died or Transferred to Acute Facility <5Days
+P61   Neonate, AdmWt <750g W/O Significant OR Procedure
+P62   Neonate, AdmWt 750-999g W/O Significant OR Procedure
+P63   Neonate, AdmWt 1000-1249g W/O Significant OR Procedure or Ventilation >=96hours
+P64   Neonate, AdmWt 1250-1499g W/O Significant OR Procedure or Ventilation >=96hours
+P65   Neonate, AdmWt 1500-1999g W/O Significant OR Procedure or Ventilation >=96hours
+P66   Neonate, AdmWt 2000-2499g W/O Significant OR Procedure or Ventilation >=96hours
+P67   Neonate, AdmWt >=2500g W/O Sig OR Proc/Vent>=96hrs, <37 Completed Wks Gestation
+P68   Neonate, AdmWt >=2500g W/O Sig OR Proc/Vent>=96hrs, >=37 Completed Wks Gestation
+Q01   Splenectomy
+Q02   Blood and Immune System Disorders W Other OR Procedures
+Q60   Reticuloendothelial and Immunity Disorders
+Q61   Red Blood Cell Disorders
+Q62   Coagulation Disorders
+R01   Lymphoma and Leukaemia W Major OR Procedures
+R02   Other Neoplastic Disorders W Major OR Procedures
+R03   Lymphoma and Leukaemia W Other OR Procedures
+R04   Other Neoplastic Disorders W Other OR Procedures
+R60   Acute Leukaemia
+R61   Lymphoma and Non-Acute Leukaemia
+R62   Other Neoplastic Disorders
+R63   Chemotherapy
+S65   Human Immunodeficiency Virus
+T01   Infectious and Parasitic Diseases W OR Procedures
+T40   Infectious and Parasitic Diseases W Ventilator Support
+T60   Septicaemia
+T61   Postoperative and Post-Traumatic Infections
+T62   Fever of Unknown Origin
+T63   Viral Illnesses
+T64   Other Infectious and Parasitic Diseases
+U40   Mental Health Treatment W ECT, Sameday
+U60   Mental Health Treatment W/O ECT, Sameday
+U61   Schizophrenia Disorders
+U62   Paranoia and Acute Psychotic Disorders
+U63   Major Affective Disorders
+U64   Other Affective and Somatoform Disorders
+U65   Anxiety Disorders
+U66   Eating and Obsessive-Compulsive Disorders
+U67   Personality Disorders and Acute Reactions
+U68   Childhood Mental Disorders
+V60   Alcohol Intoxication and Withdrawal
+V61   Drug Intoxication and Withdrawal
+V62   Alcohol Use and Dependence
+V63   Opioid Use and Dependence
+V64   Other Drug Use and Dependence
+V65   Treatment for Alcohol Disorders, Sameday
+V66   Treatment for Drug Disorders, Sameday
+W01   Ventilation, Tracheostomy and Cranial Procedures for Multiple Significant Trauma
+W02   Hip, Femur and Lower Limb Procedures for Multiple Significant Trauma
+W03   Abdominal Procedures for Multiple Significant Trauma
+W04   Multiple Significant Trauma W Other OR Procedures
+W60   Multiple Significant Trauma, Died or Transferred to Acute Facility <5 Days
+W61   Multiple Significant Trauma W/O OR Procedures
+X02   Microvascular Tissue Transfer and Skin Grafts for Injuries to Hand
+X04   Other Procedures for Injuries to Lower Limb
+X05   Other Procedures for Injuries to Hand
+X06   Other Procedures for Other Injuries
+X07   Skin Grafts for Injuries Excluding Hand
+X40   Injuries, Poisoning and Toxic Effects of Drugs W Ventilator Support
+X60   Injuries
+X61   Allergic Reactions
+X62   Poisoning/Toxic Effects of Drugs and Other Substances
+X63   Sequelae of Treatment
+X64   Other Injuries, Poisonings and Toxic Effects
+Y01   Ventilation or Tracheostomy for Burns or OR Proc for Severe Full Thickness Burns
+Y02   Skin Grafts for Other Burns
+Y03   Other OR Procedures for Other Burns
+Y60   Burns, Transferred to Acute Facility <5 Days
+Y61   Severe Burns
+Y62   Other Burns
+Z01   Other Contacts W Health Services W OR Procedures
+Z40   Other Contacts W Health Services W Endoscopy, Sameday
+Z60   Rehabilitation
+Z61   Signs and Symptoms
+Z63   Other Follow Up After Surgery or Medical Care
+Z64   Other Factors Influencing Health Status
+Z65   Congenital Anomalies and Problems Arising from Neonatal Period
+Z66   Sleep Disorders
+...End of Report...
+Print Date: 2/03/2015 2:27:24 PM       AR-DRG Classification Toolkit
