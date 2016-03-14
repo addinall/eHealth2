@@ -12,9 +12,11 @@
 //              will give the coders who modify this a clue
 //              where to look.
 //             
-//              This module contains various functions that
-//              are required by the Best Practice outward facing
-//              pages as well as the portal and application functions.
+//              This little file compramises the CLIENT side of the RESTful API.
+//              It also contains a few ancilliary functions to manipulate various
+//              well defined DOM elements, and to "catch" events on elements
+//              with pre-defined functions through the application of discrete
+//              classes.
 //             
 
     // The Module Pattern is what is called a “design pattern”, and it’s extremely useful 
@@ -41,7 +43,7 @@
         // We will use a little lightweight Angular in here, just for some
         // deep two way binding.  Not the full Model.
 
-        var session = {};
+        var session = {};                                           // current session, used to set COOKIES
         session.role            = "UNDEFINED";                      // what is the role of the current user
         session.logged_in       = false;                            // always assume no login
         session.current_task    = "UNDEFINED";                      // what task are we performing RIGHT NOW
@@ -97,6 +99,7 @@
             // form or per MODEL as is a common case.  Makes no sense having an API really.
             // Might as well just code willy7-nilly.
 
+            alert("into the land of PHP we go!");
 
             jqxhr = $.ajax({
                 url:            "oop/server.php",                               // API code
@@ -109,10 +112,9 @@
             }).fail(function(msg) {                                             // error is depreciated.  WHY? Dunno...
                 alert("Database Communication failure");                        // this is a HARD failure sent to
                 console.log(JSON.stringify(msg));                               // us by the comms stack, authentication, or OS
-                })
-              .done(function(data) {                                            // AJaX worked, deal with the resultant packet
+            }).done(function(data) {                                            // AJaX worked, deal with the resultant packet
                 __private_callback(data);                                       // in our custom callback. success() has been
-                });                                                             // depreciated, replaced by bone().  Why???
+            });                                                                 // depreciated, replaced by bone().  Why???
         }
 
 
@@ -125,6 +127,7 @@
             // back from the API. It can be as simple as an ACK/NACK or as complex
             // as changing the CSS for the whole site.
 
+            alert("back from PHP land!");
 
             // first test for soft errors from the API
 
@@ -183,10 +186,12 @@
             // adding a CLASS of required to the appropriate
             // for items.
 
+            alert("in validate");
+
             $(form).each(function(){
                 var field = $(this).find(':input');
                 if (field.hasClass('required')) {                                           // ok, first check for fields that are REQUIRED
-                    console.log(field);                                                     // have not been caught by a modern browser and are
+                    //console.log(field);                                                     // have not been caught by a modern browser and are
                     fval = field.val();                                                     // empty.  HONK!
                     if ((fval == null) || fval == '') {
                         alert('All required fields must be filled out:  ' + field.name);
@@ -209,11 +214,8 @@
                         }
                     }
                 }
-                return is_valid;
             });
-
-
-
+            return is_valid;
         }
 
 
@@ -262,7 +264,7 @@
             // input item is REQUIRED and it has been submitted
             // empty, then BEEP and bugger orf.
 
-            if (! __private_validate(form) {
+            if (! __private_validate(form)) {
                 return false;
             }
 
@@ -363,11 +365,24 @@
             __private_api();                                                // make an ajax request to the API
         }
 
+
+        //--------------------------------
+        var fetch_tuple = function(form) {
+
+            // return one tuple from the database.
+            // this is essentially a GET /patients/666
+            // but written with some brains for a change
+
+
+        }
+
+
+
         //------
         return {                                                            // ehatever me make visible here is the
             callAPI: callAPI,                                               // extent of the PUBLIC API.
-            fetch_list: fetch_list,                                     
-            fetch_tuple: fetch_tuple,
+            fetch_list: fetch_list,                                         // fetch multiple tuples in a list
+            fetch_tuple: fetch_tuple                                        // GET fetch one tuple    
 
         }
 

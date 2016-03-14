@@ -150,6 +150,9 @@ class restServer {
     //------------------------------
     function __construct(DBMS $db) {
 
+        print_r($_POST);
+
+
         $this->database         = $db;                                                  // pull in our database.  It is alive
                                                                                         // at this point
 
