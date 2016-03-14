@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+## vim: set tabstop=4 shiftwidth=4 autoindent expandtab smartindent:
+##---------------------------------------------------------
+## CAPTAIN  SLOG
+##---------------------------------------------------------
+##
+##  FILE:       patients.html 
+##  SYSTEM:     2016 new toolkit and boilerplate
+##  AUTHOR:     Mark Addinall
+##  DATE:       13/03/2016
+##  SYNOPSIS:   This page presents a list of patients
+##              as requested by the API call
+##                  {{type: PATIENT}, {method: list}, {filter: (A..Z|a..z|null == ALL)}}
+##              Each tuple recieved is displayed in a dynamic table with controls to
+##              EDIT the entity in a modal administration screen, or to delete the entity.
+##              On this page is a BIG SHINEY BUTTON that will allow the user to
+##                 ADD a new entity via
+##                  {{type: organisation), {method: create}}
+##              consumed by the modal administration screen.
+##              Responsive from the ground up, but the
+##              brief is to make it work on older browsers as well.
+##                     
+-->
+
+<!--#include file="head.html" -->
+
+    <body role="document" onload="bestPractice.fetch_users('A', true)">
+
+
+<!--#include file="menu.html" -->
+
+        <div class="container" role="main">
+
+            <div class="col-xs-12 best-practice-text">
+               <h2>Current User List</h2>   
+               <ul class="nav nav-tabs" id="patient_tabs">
+                    <li><a href="#">A</a></li>
+                    <li><a href="#">B</a></li>
+                    <li><a href="#">C</a></li>
+                    <li><a href="#">D</a></li>
+                    <li><a href="#">E</a></li>
+                    <li><a href="#">F</a></li>
+                    <li><a href="#">G</a></li>
+                    <li><a href="#">H</a></li>
+                    <li><a href="#">I</a></li>
+                    <li><a href="#">J</a></li>
+                    <li><a href="#">K</a></li>
+                    <li><a href="#">L</a></li>
+                    <li><a href="#">M</a></li>
+                    <li><a href="#">N</a></li>
+                    <li><a href="#">O</a></li>
+                    <li><a href="#">P</a></li>
+                    <li><a href="#">Q</a></li>
+                    <li><a href="#">R</a></li>
+                    <li><a href="#">S</a></li>
+                    <li><a href="#">T</a></li>
+                    <li><a href="#">U</a></li>
+                    <li><a href="#">V</a></li>
+                    <li><a href="#">W</a></li>
+                    <li><a href="#">X</a></li>
+                    <li><a href="#">Y</a></li>
+                    <li><a href="#">Z</a></li>
+               </ul>
+               <div id="patient_table" class=table-responsive">
+               </div>
+            </div>
+
+        </div> <!-- /container -->
+
+<!--#include file="footer.html" -->
+
+    </body>
+</html>

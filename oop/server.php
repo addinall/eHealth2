@@ -152,31 +152,11 @@ class restServer {
 
         $this->database         = $db;                                                  // pull in our database.  It is alive
                                                                                         // at this point
-        if (isset($_REQUEST['format'])) {
-            $this->format                     = $_REQUEST['format'];
-        } else {
-            $this->format = 'JSON';                                                     // default to JSON
-        }
-
-        $this->secure_wire();                                                           // check HTTPS status and availability
-                                                                                        // bail if not secure
-
-        $this->authenticate();                                                          // check role security required
-                                                                                        // authenticate against a shared secret
-                                                                                        // bail if not secure
 
         $this->response['code']   = 0;                                                  // Set default HTTP response of 'ok'
         $this->response['status'] = 200;
         $this->response['data']   = NULL;
 
-
-        if (isset($_SERVER['REQUEST_METHOD'])) {
-            $this->crud   = $_SERVER['REQUEST_METHOD'];                                 // since we are implementing CRUD as REST, we should
-        }                                                                               // follow the convention of using the HTTP REQUEST
-                                                                                        // types as indicative of the database function to be
-                                                                                        // carried out.  For the life of me I know not why.
-                                                                                        // I am sure that was not in the origional thinking
-                                                                                        // when designing REST transactions.
         // start with our basic CRUD/REST response functions.  As I have pointed
         // out, in a review of recent published literature regarding the implementation
         // of CRUD/REST, the simple functions sre not going to cover a LOT of
@@ -199,23 +179,21 @@ class restServer {
         // We can code up a series of CURSORS that we KNOW will be used for a standard SERIES
         // or SET of reports.
         //
+        // This RESTful server is going to implement ALL TRANSACTION types as a POST
+        // function.
 
-        if (isset($_REQUEST['exec'])) {                 // before we drop into CRUDDiness, handle
-            $SQL = $_REQUEST['exec'];                   // the special cases of EXECUTE IMMEDIATE
-            if ($this->safe_parse($SQL)) {              // and RPC requests, so here, if EXEC is
-                                                        // set, and we deem it to be non-malicious
-                                                        // via lexical analysis, then go and do
-                                                        // the thing .....
-                $this->database->execute($SQL);         // well?  This eithe dies or comes back
-                                                        // it CAN come back with an empty SET
-                                                        // that is an SEP.
-
-            }
-        }
 
 
 
         switch($this->crud) {
+
+            case 'EXEC':                                    // before we drop into CRUDDiness, handle
+                $SQL = $_REQUEST['exec'];                   // the special cases of EXECUTE IMMEDIATE
+                $this->database->execute($SQL);             // well?  This eithe dies or comes back
+                                                            // it CAN come back with an empty SET
+                                                            // that is an SEP.
+                break;
+
             case 'GET':
                 //  retrieval of tuple
                 break;
@@ -251,83 +229,6 @@ class restServer {
     }   // end of contructor, and essentially this instance
 
 
-    //----------------------
-    function secure_wire() {
-
-
-        if (isset($_REQUEST['https']) && $_REQUEST['https']) {                          // if it has been set to TRUE ...
-            $this->HTTPS_required = TRUE;
-        }
-
-        if( $this->HTTPS_required && $_SERVER['HTTPS'] != 'on' ) {                      // Optionally require connections to be made via HTTPS
-            $this->response['code']   = 2;
-            $this->response['status'] = $api_response_code[ $response['code'] ]['HTTP Response'];
-            $this->response['data']   = $api_response_code[ $response['code'] ]['Message'];
-    
-            $this->deliver_response();                                                  // Return Response to browser. This will exit the script.
-        }
-
-    }
-
-
-    //---------------------
-    function safe_parse() {
-        return TRUE;
-    }
-
-
-    //-----------------------
-    function authenticate() {
-
-        
-        if (isset($_REQUEST['authenticate']) && $_REQUEST['authenticate']) {            // if it has been set to TRUE ...
-            $this->authentication_required = TRUE;                                      // needs a password from somewhere
-        }
-
-
-        if( $this->authentication_required ) {                                          // Optionally require user authentication
-            if( empty($_REQUEST['username']) || empty($_REQUEST['password']) ){
-                $this->response['code'] = 3;
-                $this->response['status'] = $api_response_code[ $response['code'] ]['HTTP Response'];
-                $this->response['data'] = $api_response_code[ $response['code'] ]['Message'];
-
-                // Return Response to browser
-                $this->deliver_response();
-
-            } elseif( $_REQUEST['username'] != 'foo' && 
-                      $_REQUEST['password'] != 'bar' ){                                 // Return an error response if user fails authentication. 
-                $response['code'] = 4;                                                  // needs a database call here
- 
-                $response['status'] = $api_response_code[ 
-                                $response['code'] ]['HTTP Response'];                   // which woll be a LOT more complex in production 
-                $response['data'] = $api_response_code[ 
-                                    $response['code'] ]['Message'];
-
-       
-                deliver_response($_REQUEST['format'], $response);                       // Return Response to browser
-            }
-
-        }
-
-    }
-
-    //-------------------------------------------------------
-    function to_xml(SimpleXMLElement $object, array $data) {  
-
-    // take an array of data and transform it into XML format
-    // for the users of the web service
- 
-        foreach ($data as $key => $value) {                                             // iterate over array 
-            if (is_array($value)) {                                                     // multi level array?
-                $new_object = $object->addChild($key);                                  // yes it is
-                to_xml($new_object, $value);                                            // recurse as deep as you like
-            }   
-            else {   
-                $object->addChild($key, $value);                                        // otherwise, build the branch
-            }   
-        }   
-    }   
-
 
     //--------------------------
     function deliver_response(){
@@ -339,27 +240,12 @@ class restServer {
     //  The desired HTTP response data
 
 
-     //   header('Content-Type: text/html; charset=utf-8');                               // Set HTTP Response Content Type 
-
-
-        if (strcasecmp($this->format,'JSON') == 0 ) {                                   // Process different content types
-                                                                                        // json first we will be using
-                                                                                        // this mostly I think` 
-            $json_response = json_encode($this->response['data']);                      // Format data into a JSON response
-            header('HTTP/1.1 '.$this->response['status'] .                                  // Set HTTP Response
+        $json_response = json_encode($this->response['data']);                      // Format data into a JSON response
+        header('HTTP/1.1 '.$this->response['status'] .                              // Set HTTP Response
                 ' '.$this->http_response_code[$this->response['status'] ]);
-            header('Content-Type: application/json; charset=utf-8');                    // Set HTTP Response Content Type
+        header('Content-Type: application/json; charset=utf-8');                    // Set HTTP Response Content Type
 
-            echo $json_response;                                                        // Deliver formatted data
-        } else if (strcasecmp($this->format,'xml') == 0) {                              // Process different content types
-                                                                                        // xml for older CORBA feeders
-                                                                                        // of API Web services
-            $xml = new SimpleXMLElement('<HTTP-Root/>');
-            to_xml($xml, $this->response['data']);
-            echo $xml->asXML();
-        } else {
-            echo http_build_query($this->response['data'],'','<br>');                   // Deliver HTMLified formatted data
-        }
+        echo $json_response;                                                        // Deliver formatted data
     }
 
 }  // class restServer
