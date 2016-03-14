@@ -217,6 +217,10 @@ class restServer {
 
         switch($this->crud) {
             case 'GET':
+                //  retrieval of tuple
+                break;
+
+            case 'LIST':
                 //  retrieval of tuple(s)
                 //  $this->database->log_config->trace("GOING TO SELECT .......");
                 //  $this->database->execute('SELECT * from em_patients LIMIT 10;');
@@ -224,13 +228,13 @@ class restServer {
                 //  $db_result = $this->database->fetch_all();
                 //  $this->response['data'] = $db_result->get_stack();
                 //  $this->database->log_config->trace("FETCHED ........"  . json_encode( $this->response['data']));
-                //  break;
+                  break;
 
-            case 'POST':
+            case 'CREATE':
                 // create new tuple(s)
                 break;
 
-            case 'PUT':
+            case 'UPDATE':
                 // update tuple
                 break;
     

@@ -92,7 +92,11 @@
         //------------------------------
         var __private_api = function() {
 
-            //console.log(packet);
+            // workhorse.  EVERY call to our server REST API comes through
+            // this interface.  NO exceptions.  We will NOT have an interface per
+            // form or per MODEL as is a common case.  Makes no sense having an API really.
+            // Might as well just code willy7-nilly.
+
 
             jqxhr = $.ajax({
                 url:            "oop/server.php",                               // API code
@@ -122,12 +126,11 @@
             // as changing the CSS for the whole site.
 
 
-            console.log(data);
             // first test for soft errors from the API
 
             if (data.hasOwnProperty('error')) {                 // API sent us back a soft error, so
                 alert(JSON.stringify(data.error));              // tell  the user and
-                return false;                                   // leave the modal dialogue active
+                return false;                                   // leave the modal dialogue or the form active
             }                                                   // so it can be fixed
 
 
@@ -182,21 +185,23 @@
 
             $(form).each(function(){
                 var field = $(this).find(':input');
-                if (field.hasClass('required')) {
-                    console.log(field);
-                    fval = field.val();
+                if (field.hasClass('required')) {                                           // ok, first check for fields that are REQUIRED
+                    console.log(field);                                                     // have not been caught by a modern browser and are
+                    fval = field.val();                                                     // empty.  HONK!
                     if ((fval == null) || fval == '') {
                         alert('All required fields must be filled out:  ' + field.name);
-                        is_valid = false;
+                        is_valid = false;                                                   // and keep the MODAL for active
                     }
-                    if (field.hasClass('email')) {
+                    if (field.hasClass('email')) {                                          // now check if the email entry follows some
+                                                                                            // rudimentry rules as described in this REGEX
                         var regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
                         is_valid = regex.test(fval);
                         if (! is_valid) {
                             alert('The email address is invalid.  Please re-enter');
                         }
                     }
-                    if (field.hasClass('url')) {
+                    if (field.hasClass('url')) {                                            // do the same for a URL entry, parse it
+                                                                                            // lightly for correctness.
                         var regex = /(http|ftp|https):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])?/; 
                         is_valid = regex.test(fval);
                         if (! is_valid) {
@@ -321,27 +326,49 @@
         }
 
 
-        //-----------------------------------------------
-        var fetch_users = function(alpha, filter, draw) {
-           
+        //---------------------------------
+        var display_list = function(form) {
 
-            packet.method          = "list";                                // GET multiple tuples
-            packet.type            = "user";                                // of type user
-            packet.search          = "last_name";                           // object of simple SELECT criteria
-            packet.card            = "^";                                   // BEGINS with
+            // generic stick a list to the screen
+            // this little lot probably COULD be replaced with some ANGULAR
+            // or REACT code, but I am reicant to introduce complexity
+            // until I am sure I need to do so.  After all, the ANGULAR and REACT
+            // people are doing pretty much the same things I do in native
+            // or jQuery.  I just am doing a LOT less of it to meet my system
+            // requirements.
+
+
+        }
+
+        //-----------------------------------------------
+        var fetch_list = function(alpha, form) {
+          
+            // a generic function we make available to the application that will
+            // return multiple tuples of data in a list based on the operating
+            // parameters enclosed in the controlling form.  This is generally
+            // a multilpe TAB display where the operator chooses the A..Z TAB
+            // and the relevant sorted database members of the correct type
+            // are sourced from the REST server.
+            //
+            // What happens witht the data at that stage is up to the business
+            // logic in the application.  The data is available AT THIS STAGE
+            // in the SHARED object, shared.
+
+            packet.method          = "LIST";                                // GET multiple tuples
+            packet.type            = form.type;                             // of type SCHEME_MEMBER - patient, client, staff etc...
+            packet.card            = form.term;                             // BEGINS with, ENDS with, CONTAINS, SOUNDS LIKE ...
             packet.term            = alpha;                                 // the TERM IN - API
             packet.filter          = filter;                                // TERMS OUT - API eg. ["name_f","name_l","email"];
 
             __private_api();                                                // make an ajax request to the API
-            if (draw) {
-                __private_list_users();                                     // send payload to screen
-            }
         }
 
         //------
         return {                                                            // ehatever me make visible here is the
             callAPI: callAPI,                                               // extent of the PUBLIC API.
-            fetch_users: fetch_users
+            fetch_list: fetch_list,                                     
+            fetch_tuple: fetch_tuple,
+
         }
 
     })();                                                                   // MODULE thatsIT namespace
@@ -387,17 +414,15 @@ $(document).ready(function() {
     // but do not involve a form submission.
 
     //-----------------------------------------------
-    $("#users_tabs").on('click', 'a',function() {
+    $(".tit-tabs").on('click', 'a',function() {
 
     // now for some list routines.  The LIST pages of the application
     // are TABBED allowing the end user to select by alphabetical order.
     // This saves HUGE screens, which are pretty awful normally,
     // dreadfull on a smaller device like a fondleslab or telephone.
 
-        var index = $(this).parent("li").index();               // which li was clicked?
-        thatsIT.fetch_users(ALPHABET[index], ["first_name",
-                                                "last_name",
-                                                "email"], true);// fetch those users and draw to screen
+        var index = $(this).parent("li").index();                   // which li was clicked?
+        thatsIT.fetch_list(ALPHABET[index], this);                  // go and get multiple tuples from the database
    });
 
    

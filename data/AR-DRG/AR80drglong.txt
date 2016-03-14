@@ -1,5 +1,6 @@
 DRG List   Chart Version : V80 SPECS.
 Selection : "All"
+This is the larger of the two
 
 DRG   Description
 801A  OR Procedures Unrelated to Principal Diagnosis, Major Complexity
