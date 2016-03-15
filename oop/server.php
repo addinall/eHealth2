@@ -116,24 +116,8 @@ class restServer {
 
     private $database;
 
-    private $HTTPS_required             = FALSE;                // Define whether an HTTPS connection is required
-
-                                                                    
-    private $authentication_required    = FALSE;                // Define whether user authentication is required;
-
+    private $crud;
                                                                 // Define API response codes and their related HTTP response
-
-    private $format;                                            // JSON, XML or HTTP encoded payload
-
-    private $api_response_code = array(
-            0 => array('HTTP Response' => 400, 'Message' => 'Unknown Error'),
-            1 => array('HTTP Response' => 200, 'Message' => 'Success'),
-            2 => array('HTTP Response' => 403, 'Message' => 'HTTPS Required'),
-            3 => array('HTTP Response' => 401, 'Message' => 'Authentication Required'),
-            4 => array('HTTP Response' => 401, 'Message' => 'Authentication Failed'),
-            5 => array('HTTP Response' => 404, 'Message' => 'Invalid Request'),
-            6 => array('HTTP Response' => 400, 'Message' => 'Invalid Response Format')
-            );
 
 
     private $http_response_code = array(
@@ -150,13 +134,11 @@ class restServer {
     //------------------------------
     function __construct(DBMS $db) {
 
-        print_r($_POST);
-
 
         $this->database         = $db;                                                  // pull in our database.  It is alive
                                                                                         // at this point
 
-        $this->response['code']   = 0;                                                  // Set default HTTP response of 'ok'
+        $this->response['code']   = 'OK';                                               // Set default HTTP response of 'ok'
         $this->response['status'] = 200;
         $this->response['data']   = NULL;
 
@@ -185,16 +167,19 @@ class restServer {
         // This RESTful server is going to implement ALL TRANSACTION types as a POST
         // function.
 
-
-
+        $stuff = print_r($_POST);
+        $this->database->log_config->trace($stuff);
+        $this->crud = 'EXEC';
+        $SQL = "SELECT * from patients limit 2";
 
         switch($this->crud) {
 
-            case 'EXEC':                                    // before we drop into CRUDDiness, handle
-                $SQL = $_REQUEST['exec'];                   // the special cases of EXECUTE IMMEDIATE
-                $this->database->execute($SQL);             // well?  This eithe dies or comes back
-                                                            // it CAN come back with an empty SET
-                                                            // that is an SEP.
+            case 'EXEC':                                                    // before we drop into CRUDDiness, handle
+                $this->database->execute($SQL);                             // well?  This eithe dies or comes back
+                                                                            // it CAN come back with an empty SET
+                                                                            // that is an SEP.
+                $db_result = $this->database->fetch_all();                  // retrieve tuples from the CURSOR
+                $this->response['data'] = $db_result->get_stack();          // and shove in the parcel to go back to the CLIENT API
                 break;
 
             case 'GET':
@@ -202,14 +187,10 @@ class restServer {
                 break;
 
             case 'LIST':
-                //  retrieval of tuple(s)
-                //  $this->database->log_config->trace("GOING TO SELECT .......");
-                //  $this->database->execute('SELECT * from em_patients LIMIT 10;');
-                //  $this->database->log_config->trace("AFTER SELECT, GOING TO FETCH.......");
-                //  $db_result = $this->database->fetch_all();
-                //  $this->response['data'] = $db_result->get_stack();
-                //  $this->database->log_config->trace("FETCHED ........"  . json_encode( $this->response['data']));
-                  break;
+                $this->database->execute("SELECT * from $table;");
+                $db_result = $this->database->fetch_all();
+                $this->response['data'] = $db_result->get_stack();
+                break;
 
             case 'CREATE':
                 // create new tuple(s)
@@ -243,11 +224,10 @@ class restServer {
     //  The desired HTTP response data
 
 
-        $json_response = json_encode($this->response['data']);                      // Format data into a JSON response
         header('HTTP/1.1 '.$this->response['status'] .                              // Set HTTP Response
                 ' '.$this->http_response_code[$this->response['status'] ]);
         header('Content-Type: application/json; charset=utf-8');                    // Set HTTP Response Content Type
-
+        $json_response = json_encode($this->response['data']);                      // Format data into a JSON response
         echo $json_response;                                                        // Deliver formatted data
     }
 
@@ -270,6 +250,16 @@ $database       = new DBMS($logger);                            // fire up the d
                                                                 // amount of time.  The database SHOULD just be handed
                                                                 // an existing stream without the overhead of
                                                                 // a brand new mysqli connect.  With luck.
+                                                                //
+                                                                // there is a reason for structuring the code this way.
+                                                                // for the AJaXy single page type applications, all
+                                                                // I need to is include this object over my normal
+                                                                // data/database and ORB objects.  This allows me
+                                                                // to still write the traditional PHP persistant applications
+                                                                // without changing my baseline object model.
+                                                                // This REST server is just a different way of accessing the
+                                                                // same objects.
+                                                                //
 $server = new restServer($database);                            // fire up a server and send in a database object
 
 

@@ -100,6 +100,7 @@
             // Might as well just code willy7-nilly.
 
             alert("into the land of PHP we go!");
+            console.log(JSON.stringify(packet));
 
             jqxhr = $.ajax({
                 url:            "oop/server.php",                               // API code
