@@ -4,7 +4,9 @@
 ### February 2016
 ----
 
-Another go at my eHealth systems.
+A full stack Javascript/AJaX(J)/HTML5/CSS3/jQuery/PHP Framework.
+
+I am using this eHealth as a test case to use the new boilerplate.
 
 Two reasons for this site, I want to test some new tools and techniques (as usual) and since my last eHealth
 site ( http://www.addinall.net/ehealth/ ) was published in 2010, I thought it time for an update.
@@ -16,6 +18,12 @@ Tools used for this version include:
 
 - an update version of my PHP OOD/OOP db and utility routines
 - Bootstrap
+- Javascript (native)
+- jQuery
 - Angular
+- REST/API
+- PHP
+- Various databases
+
 
 
