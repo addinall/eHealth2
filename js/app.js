@@ -50,7 +50,6 @@
         session.user_profile    = {};                               // who, what, where and when???
         
         packet                  = {};                               // AJaX(J) packet TO API
-        packet.meta             = {};                               // accompanying meta data
 
         shared                  = {};                               // a shared memory block
                                                                     
@@ -99,16 +98,16 @@
             // form or per MODEL as is a common case.  Makes no sense having an API really.
             // Might as well just code willy7-nilly.
 
-            alert("into the land of PHP we go!");
-            console.log(JSON.stringify(packet));
+            var packed = JSON.stringify(packet);
+
+            console.log(packed);
 
             jqxhr = $.ajax({
-                url:            "oop/server.php",                               // API code
-                type:           "POST",                                         // ALL API calls are POST
+                method:         "POST",                                         // ALL API calls are POST
+                url:            "oop/server.php/",                              // API code
                 dataType:       "json",                                         // JSON back at us please
-                data:           JSON.stringify(packet),                         // form data + security packet
-                processData:    false,                                          // probably redundant. do not URLencode
-                contentType:    "application/json"                              // HEADER.  IMPORTANT!
+                //contentType:    "application/json",                           // HEADER.  IMPORTANT!
+                data:           {"packed":packed}                               // form data + security packet
 
             }).fail(function(msg) {                                             // error is depreciated.  WHY? Dunno...
                 alert("Database Communication failure");                        // this is a HARD failure sent to
@@ -128,7 +127,6 @@
             // back from the API. It can be as simple as an ACK/NACK or as complex
             // as changing the CSS for the whole site.
 
-            alert("back from PHP land!");
 
             // first test for soft errors from the API
 
@@ -143,22 +141,22 @@
                                                                 // as a request to LIST or READ
                                                                 // will return a payload in this object
             console.log(shared);
-            if (session.current_task == 'login') {
+            if (session.current_task == 'LOGIN') {
 
                 alert("Success!  You are logged in.");
                 $("#login-overlay").hide();                     // there is a bug in the bootstrap js that
                 $('body').removeClass('modal-open');            // does not clean up the modal backdrop on
                 $('modal-backdrop').remove();                   // exit and leaves the screen locked.
 
-                role = "admin";
+                role = "ADMIN";
 
-                if (role == "admin") {                          // if the user that just logged in is a super
+                if (role == "ADMIN") {                          // if the user that just logged in is a super
                     __private_add_admin_menu();                 // user, give him/her some extra menu
                 }   else {                                      // stuff to play with
                     __private_remove_admin_menu();
                 }
             }
-            else if (session.current_task == 'register') {
+            else if (session.current_task == 'REGISTER') {
                 alert("Success!  You are now registered.");
                 $("#register").hide();                          // there is a bug in the bootstrap js that
                 $('body').removeClass('modal-open');            // does not clean up the modal backdrop on
@@ -187,12 +185,11 @@
             // adding a CLASS of required to the appropriate
             // for items.
 
-            alert("in validate");
 
             $(form).each(function(){
                 var field = $(this).find(':input');
                 if (field.hasClass('required')) {                                           // ok, first check for fields that are REQUIRED
-                    //console.log(field);                                                     // have not been caught by a modern browser and are
+                    //console.log(field);                                                   // have not been caught by a modern browser and are
                     fval = field.val();                                                     // empty.  HONK!
                     if ((fval == null) || fval == '') {
                         alert('All required fields must be filled out:  ' + field.name);
@@ -269,21 +266,19 @@
                 return false;
             }
 
-            var data = $(form).serializeJSON({checkboxUncheckedValue: "false"});
+            packet = $(form).serializeJSON({checkboxUncheckedValue: "false"});
 
-            packet.method      = data.method;                               // move up a level for JSON object
-            packet.type        = data.type;                                 // transport standard
 
-            if (packet.method == 'login') {                                 // prime our session variables
-                session.current_task = 'login';
-            } else if (packet.method == 'create' &&
-                        packet.type == "user") {
-                session.current_task = 'register';                          // user wants to join
+            if (packet.method == 'LOGIN') {                                 // prime our session variables
+                session.current_task = 'LOGIN';
+            } else if (packet.method == 'CREATE' &&
+                        packet.type == "USER") {
+                session.current_task = 'REGISTER';                          // user wants to join
                 if (data.password != data.conform_password) {               // check the form passwords
                     alert("Passwords do not match.");                       // if they are not the same, bug out,
                     return false;                                           // but keep the MODAL up!
                 }
-            } else if (packet.method == 'logout') {
+            } else if (packet.method == 'LOGOUT') {
                 session.role            = "UNDEFINED";                      // what is the role of the current user
                 session.logged_in       = false;                            // always assume no login
                 session.current_task    = "UNDEFINED";                      // what task are we performing RIGHT NOW
@@ -291,14 +286,6 @@
                 return true;                                                // make MODAL go away
             }
 
-            packet.attributes  = data;                                      
-
-
-            // we then gather a little info about the client first of all.
-            // a clever hacker can spoof an IP, but not all the location
-            // and server information that we can gather.
-
-            __private_getinfo();                                            // get client geo-location data 
 
             __private_api();                                                // make an ajax request to the API
         }           

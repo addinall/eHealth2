@@ -143,7 +143,7 @@ private $trace_file;            // the system message file
                                                                     // of this framework
         
         if (! ($this->error_fd = fopen($this->error_file, "a")))  {  // try and open the error file to append text 
-            die("Could not open error file for writing. Blah blah.  Check permissions.<br> \n\n" .
+            die("Could not open error file for writing.  Check permissions.\n" .
                     $this->error_file);
         }                                                           // or die a horrible death.
                                                                     // Some would say a system should not die,
@@ -152,9 +152,9 @@ private $trace_file;            // the system message file
                                                                     // FILE IO fails, something is VERY WRONG
                                                                     // up there^.  Fix it first.
         if  (! ($this->trace_fd = fopen($this->trace_file, "a"))) {  // try and open the trace file to append text 
-            die("Could not open error file for writing.  Check permissions.");
+            die("Could not open error file for writing.  Check permissions. \n");
         }                                                           // or die a horrible death.
-        $this->trace("Session started normally. \n\n");             // say hello to the message file 
+        $this->trace("Session started normally. \n");             // say hello to the message file 
     }
 
 
@@ -174,7 +174,7 @@ private $trace_file;            // the system message file
     //-------------------------------
     public function trace($message) {
         if (! fwrite($this->trace_fd, $message . " - " . 
-                    date(DATE_RFC822))) {                           // attempt to write the trace
+                    date(DATE_RFC822) . "\n")) {                    // attempt to write the trace
             $this->error("Failed write to trace file " .
                                             $message, FALSE);       // can not write a trace
         }                                                           // flag this as a non FATAL error

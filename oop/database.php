@@ -471,7 +471,7 @@ public      $log_config;        // our log file configuration
 
         if ($this->db_type == 'mySQL') {                                // mySQL sorta works as one would
             $this->result = $this->stream->query($sql);                 // expect from a modern database.
-            $this->log_config->trace('SQL == ' . $sql  . ' ==  ' );
+            //$this->log_config->trace('SQL == ' . $sql  . ' ==  ' );
             if (!$this->result) {                                       // it gets a STREAM from a CONNECT
                 $this->log_config->error('Query failed: ' . $sql . ' ' .// function (now it is an object that
                     $this->stream->errno . "-" . 

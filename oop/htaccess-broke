@@ -1,7 +1,0 @@
-# Turn on the rewrite engine
-Options +FollowSymlinks
-RewriteEngine on
- 
-# Request routing
-RewriteRule ^([a-zA-Z_-]*)\.(html|json)?$   server.php?method=$1&format=$2 [nc,qsa]
-

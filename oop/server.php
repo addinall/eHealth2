@@ -116,6 +116,7 @@ class restServer {
 
     private $database;
 
+    private $packet_in;
     private $crud;
                                                                 // Define API response codes and their related HTTP response
 
@@ -167,27 +168,34 @@ class restServer {
         // This RESTful server is going to implement ALL TRANSACTION types as a POST
         // function.
 
-        $stuff = print_r($_POST);
-        $this->database->log_config->trace($stuff);
-        $this->crud = 'EXEC';
-        $SQL = "SELECT * from patients limit 2";
+        $this->database->log_config->trace(json_encode($_POST));
+        $packed = array_key_exists('packed', $_POST) ? 
+                      json_decode($_POST['packed']) : 
+                                null;
 
-        switch($this->crud) {
 
-            case 'EXEC':                                                    // before we drop into CRUDDiness, handle
-                $this->database->execute($SQL);                             // well?  This eithe dies or comes back
+
+        switch($packed->method) {
+
+        case 'EXEC':                                                        // before we drop into CRUDDiness, handle
+                                                                            // complex queries sent to us as an EXEC IMMEDIATE
+                $this->database->execute($SQL);                             // This either dies or comes back
                                                                             // it CAN come back with an empty SET
                                                                             // that is an SEP.
                 $db_result = $this->database->fetch_all();                  // retrieve tuples from the CURSOR
                 $this->response['data'] = $db_result->get_stack();          // and shove in the parcel to go back to the CLIENT API
                 break;
 
-            case 'GET':
-                //  retrieval of tuple
+            case 'LOGIN':                                                   // another special case, user rquested to login to the system
+
                 break;
 
-            case 'LIST':
-                $this->database->execute("SELECT * from $table;");
+            case 'GET':
+                                                                            //  retrieval of single tuple
+                break;
+
+            case 'LIST':                                                    // retrieval of multiple tuples
+                $this->database->execute("SELECT * from $table LIMIT 10;");
                 $db_result = $this->database->fetch_all();
                 $this->response['data'] = $db_result->get_stack();
                 break;
@@ -239,6 +247,11 @@ class restServer {
 
 
 //------------- main() --------------------
+//
+
+//print_r($_POST);
+//exit();
+
 
 $logger         = new ErrorLogger($configuration);              // turn on the error system first
 $database       = new DBMS($logger);                            // fire up the database with details
