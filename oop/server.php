@@ -168,18 +168,19 @@ class restServer {
         // This RESTful server is going to implement ALL TRANSACTION types as a POST
         // function.
 
-        $this->database->log_config->trace(json_encode($_POST));
-        $packed = array_key_exists('packed', $_POST) ? 
-                      json_decode($_POST['packed']) : 
-                                null;
+        $packed = array_key_exists('packed', $_POST) ?                      // has the JSON object 'packed' been packed at the client? 
+                      json_decode($_POST['packed']) :                       // yes, I packed it myself.  This stops this API being run
+                                null;                                       // as a stand alone.
 
-
+        if (packed === null) {
+            exit();
+        }
 
         switch($packed->method) {
 
         case 'EXEC':                                                        // before we drop into CRUDDiness, handle
                                                                             // complex queries sent to us as an EXEC IMMEDIATE
-                $this->database->execute($SQL);                             // This either dies or comes back
+                $this->database->execute($packed->SQL);                     // This either dies or comes back
                                                                             // it CAN come back with an empty SET
                                                                             // that is an SEP.
                 $db_result = $this->database->fetch_all();                  // retrieve tuples from the CURSOR
@@ -188,6 +189,9 @@ class restServer {
 
             case 'LOGIN':                                                   // another special case, user rquested to login to the system
 
+                $SQL = "SELECT * from users where email = $packed->email;"; // see if we can get a registered user
+                                                                            // now we send back whatever we got from the database which
+                                                                            // CAN include NOTHING!                 
                 break;
 
             case 'GET':
@@ -248,9 +252,7 @@ class restServer {
 
 //------------- main() --------------------
 //
-
-//print_r($_POST);
-//exit();
+// RESTful API
 
 
 $logger         = new ErrorLogger($configuration);              // turn on the error system first
