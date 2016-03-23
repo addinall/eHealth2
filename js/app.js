@@ -148,9 +148,8 @@
                 $('body').removeClass('modal-open');            // does not clean up the modal backdrop on
                 $('modal-backdrop').remove();                   // exit and leaves the screen locked.
 
-                role = "ADMIN";
 
-                if (role == "ADMIN") {                          // if the user that just logged in is a super
+                if (session.role == "ADMIN") {                  // if the user that just logged in is a super
                     __private_add_admin_menu();                 // user, give him/her some extra menu
                 }   else {                                      // stuff to play with
                     __private_remove_admin_menu();
@@ -274,6 +273,7 @@
             } else if (packet.method == 'CREATE' &&
                         packet.type == "USER") {
                 session.current_task = 'REGISTER';                          // user wants to join
+                alert("Register new user");
                 if (data.password != data.conform_password) {               // check the form passwords
                     alert("Passwords do not match.");                       // if they are not the same, bug out,
                     return false;                                           // but keep the MODAL up!
