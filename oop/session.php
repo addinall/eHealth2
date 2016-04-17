@@ -1,22 +1,23 @@
 <?php 
-## vim: set tabstop=4 shiftwidth=4 autoindent expandtab:
-##---------------------------------------------------------
-## CAPTAIN  SLOG
-##---------------------------------------------------------
-##
-##  FILE:       
-##  SYSTEM: 
-##  AUTHOR:     Mark Addinall
-##  DATE:       23/02/2016
-##  SYNOPSIS:   
-##             
-##             
-##             
-##             
-##             
-##             
-##             
-##             
+// vim: set tabstop=4 shiftwidth=4 autoindent expandtab:
+//---------------------------------------------------------
+// CAPTAIN  SLOG
+//---------------------------------------------------------
+//
+//  FILE:       session.php
+//  SYSTEM:     new toolkit/boilerplate
+//  AUTHOR:     Mark Addinall
+//  DATE:       23/02/2016
+//  SYNOPSIS:   OOD/OOP paradigm approach to PHP SESSION 
+//              management.  It is not that dificult to
+//              make PHP an elegant language to implement
+//              server side session management.  It would
+//              be better done client side in Javascript,
+//              alas, not in USM 2.2.6.  This is a bit o a hybrid
+//              as I have dropped server side session management
+//              from my 2016 code base.
+//              Adapted into USM system 17 April 2016
+//             
             
 
 include_once ('custom_exception.php');
@@ -24,139 +25,137 @@ include_once ('custom_exception.php');
 if ( !class_exists('custom_exception') ) {
     class custom_exception extends Exception {}
 }
-class SessionHandlerException extends CustomException {}
-class SessionDisabledException extends SessionHandlerException {}
-class InvalidArgumentTypeException extends SessionHandlerException {}
-class ExpiredSessionException extends SessionHandlerException {}
- 
- 
 
+
+class session_handler_exception         extends custom_exception {}
+class session_disabled_exception        extends session_handler_exception {}
+class invalid_argument_type_exception   extends session_handler_exception {}
+class expired_session_exception         extends session_handler_exception {}
+ 
+ 
+//-----------
 class Session
 {
-    /* The directory name for the session */
-    private static $SESSION_DIR = 'd79252d7dea8e2812b4ebf29ffc603ed/';
+    // The directory name for the session 
+    private  $SESSION_DIR = 'd79252d7dea8e2812b4ebf29ffc603ed/';
     
-    /* The name used for the session */
-    private static $SESSION_NAME = 'f7eac143c2e6c95e84a3e128e9ddcee6';
+    // The name used for the session
+    private  $SESSION_NAME = 'f7eac143c2e6c95e84a3e128e9ddcee6';
     
-    /**
-     * Session Age.
-     * 
-     * The number of seconds of inactivity before a session expires.
-     * 
-     * @var integer
-     */
-    protected static $SESSION_AGE = 1800;
+     // Session Age.
+     // 
+     // The number of seconds of inactivity before a session expires.
+     // 
+     // @var integer
     
-    /**
-     * Writes a value to the current session data.
-     * 
-     * @param string $key String identifier.
-     * @param mixed $value Single value or array of values to be written.
-     * @return mixed Value or array of values written.
-     * @throws InvalidArgumentTypeException Session key is not a string value.
-     */
-    public static function write($key, $value)
-    {
+    
+    protected  $SESSION_AGE = 1800;
+
+
+    //---------------------------------------
+    public  function write($key, $value) {
+
+    // Writes a value to the current session data.
+    // 
+    // @param string $key String identifier.
+    // @param mixed $value Single value or array of values to be written.
+    // @return mixed Value or array of values written.
+    // @throws InvalidArgumentTypeException Session key is not a string value.
+
         if ( !is_string($key) )
             throw new InvalidArgumentTypeException('Session key must be string value');
-        self::_init();
+        $this->_init();
         $_SESSION[$key] = $value;
-        self::_age();
+        $this->_age();
         return $value;
     }
+
+
+    //-----------------------------------------------
+    public  function read($key, $child = false) {
+     // Reads a specific value from the current session data.
+     // 
+     // @param string $key String identifier.
+     // @param boolean $child Optional child identifier for accessing array elements.
+     // @return mixed Returns a string value upon success.  Returns false upon failure.
+     // @throws InvalidArgumentTypeException Session key is not a string value.
     
-    /**
-     * Reads a specific value from the current session data.
-     * 
-     * @param string $key String identifier.
-     * @param boolean $child Optional child identifier for accessing array elements.
-     * @return mixed Returns a string value upon success.  Returns false upon failure.
-     * @throws InvalidArgumentTypeException Session key is not a string value.
-     */
-    public static function read($key, $child = false)
-    {
-        if ( !is_string($key) )
-            throw new InvalidArgumentTypeException('Session key must be string value');
-        self::_init();
-        if (isset($_SESSION[$key]))
-        {
-            self::_age();
-            
-            if (false == $child)
-            {
-                return $_SESSION[$key];
-            }
-            else
-            {
-                if (isset($_SESSION[$key][$child]))
-                {
-                    return $_SESSION[$key][$child];
+    
+        if ( !is_string($key) ) {
+            return false;
+        }
+        if (isset($_SESSION[$key])) {
+            if($this->_age() === false) {
+                if (false == $child) {
+                    return $_SESSION[$key];
+                } else {
+                    if (isset($_SESSION[$key][$child])) {
+                        return $_SESSION[$key][$child];
+                    }
                 }
             }
         }
-        return false;
+        return false;   
     }
-    
-    /**
-     * Deletes a value from the current session data.
-     * 
-     * @param string $key String identifying the array key to delete.
-     * @return void
-     * @throws InvalidArgumentTypeException Session key is not a string value.
-     */
-    public static function delete($key)
-    {
+
+
+    //-----------------------------------
+    public  function delete($key) {
+    // Deletes a value from the current session data.
+    // 
+    // @param string $key String identifying the array key to delete.
+    // @return void
+    // @throws InvalidArgumentTypeException Session key is not a string value.
         if ( !is_string($key) )
             throw new InvalidArgumentTypeException('Session key must be string value');
-        self::_init();
+        $this->_init();
         unset($_SESSION[$key]);
-        self::_age();
+        $this->_age();
     }
     
-    /**
-     * Echos current session data.
-     * 
-     * @return void
-     */
-    public static function dump()
+    /////
+     // Echos current session data.
+     // 
+     // @return void
+     ///
+    public  function dump()
     {
-        self::_init();
+        $this->_init();
         echo nl2br(print_r($_SESSION));
     }
  
-    /**
-     * Starts or resumes a session by calling {@link Session::_init()}.
-     * 
-     * @see Session::_init()
-     * @return boolean Returns true upon success and false upon failure.
-     * @throws SessionDisabledException Sessions are disabled.
-     */
-    public static function start($regenerate_session_id = true, $limit = 0, $path = '/', $domain = null, $secure_cookies_only = null)
+    /////
+     // Starts or resumes a session by calling {@link Session::_init()}.
+     // 
+     // @see Session::_init()
+     // @return boolean Returns true upon success and false upon failure.
+     // @throws SessionDisabledException Sessions are disabled.
+     ///
+    public  function start($regenerate_session_id = true, $limit = 0, $path = '/', $domain = null, $secure_cookies_only = null)
     {
         // this function is extraneous
-        return self::_init($regenerate_session_id, $limit, $path, $domain, $secure_cookies_only);
+        return $this->_init($regenerate_session_id, $limit, $path, $domain, $secure_cookies_only);
     }
     
-    /**
-     * Expires a session if it has been inactive for a specified amount of time.
-     * 
-     * @return void
-     * @throws ExpiredSessionException() Throws exception when read or write is attempted on an expired session.
-     */
-    private static function _age()
+    /////
+     // Expires a session if it has been inactive for a specified amount of time.
+     // 
+     // @return void
+     // @throws ExpiredSessionException() Throws exception when read or write is attempted on an expired session.
+     ///
+    private  function _age()
     {
         $last = isset($_SESSION['LAST_ACTIVE']) ? $_SESSION['LAST_ACTIVE'] : false ;
         
-        if (false !== $last && (time() - $last > self::$SESSION_AGE))
-        {
-            self::destroy();
-            throw new ExpiredSessionException();
+        if (false !== $last && (time() - $last > $this->$SESSION_AGE)) {
+            return $this->destroy();
         }
+
         $_SESSION['LAST_ACTIVE'] = time();
+        return false;
     }
     
-    public static function regenerate_session_id() {
+    public  function regenerate_session_id() {
       
         $session = array();
         
@@ -180,12 +179,12 @@ class Session
       
     }
     
-    /**
-     * Returns current session cookie parameters or an empty array.
-     * 
-     * @return array Associative array of session cookie parameters.
-     */
-    public static function params()
+    /////
+     // Returns current session cookie parameters or an empty array.
+     // 
+     // @return array Associative array of session cookie parameters.
+     ///
+    public  function params()
     {
         $r = array();
         if ( '' !== session_id() )
@@ -195,12 +194,12 @@ class Session
         return $r;
     }
     
-    /**
-     * Closes the current session and releases session file lock.
-     * 
-     * @return boolean Returns true upon success and false upon failure.
-     */
-    public static function close()
+    /////
+     // Closes the current session and releases session file lock.
+     // 
+     // @return boolean Returns true upon success and false upon failure.
+     ///
+    public  function close()
     {
         if ( '' !== session_id() )
         {
@@ -209,23 +208,23 @@ class Session
         return true;
     }
     
-    /**
-     * Alias for {@link Session::close()}.
-     * 
-     * @see Session::close()
-     * @return boolean Returns true upon success and false upon failure.
-     */
-    public static function commit()
+    /////
+     // Alias for {@link Session::close()}.
+     // 
+     // @see Session::close()
+     // @return boolean Returns true upon success and false upon failure.
+     ///
+    public  function commit()
     {
-        return self::close();
+        return $this->close();
     }
     
-    /**
-     * Removes session data and destroys the current session.
-     * 
-     * @return void
-     */
-    public static function destroy()
+    /////
+     // Removes session data and destroys the current session.
+     // 
+     // @return void
+     ///
+    public  function destroy()
     {
         if ( '' !== session_id() )
         {
@@ -245,13 +244,13 @@ class Session
         }
     }
     
-    /**
-     * Initializes a new session or resumes an existing session.
-     * 
-     * @return boolean Returns true upon success and false upon failure.
-     * @throws SessionDisabledException Sessions are disabled.
-     */
-    private static function _init($regenerate_session_id = false, $limit = 0, $path = '/', $domain = null, $secure_cookies_only = null)
+    /////
+     // Initializes a new session or resumes an existing session.
+     // 
+     // @return boolean Returns true upon success and false upon failure.
+     // @throws SessionDisabledException Sessions are disabled.
+     ///
+    private  function _init($regenerate_session_id = false, $limit = 0, $path = '/', $domain = null, $secure_cookies_only = null)
     {
         if (function_exists('session_status'))
         {
@@ -263,10 +262,10 @@ class Session
         if ( '' === session_id() )
         {
             $site_root = BASE_URI;
-            $session_save_path = $site_root . self::$SESSION_DIR;
+            $session_save_path = $site_root . $this->$SESSION_DIR;
             session_save_path($session_save_path);
             
-            session_name(self::$SESSION_NAME);
+            session_name($this->$SESSION_NAME);
             
             $domain = isset($domain) ? $domain : $_SERVER['SERVER_NAME'];
             
@@ -275,17 +274,17 @@ class Session
             session_start();
             
             if ($regenerate_session_id) {
-                self::regenerate_session_id();
+                $this->regenerate_session_id();
             }
             
             return true;
         
         }
         
-        self::_age();
+        $this->_age();
 
         if ($regenerate_session_id && rand(1, 100) <= 5) {
-            self::regenerate_session_id();
+            $this->regenerate_session_id();
             $_SESSION['regenerated_id'] = session_id();
         }
         

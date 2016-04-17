@@ -1,17 +1,22 @@
 <?php
+// CAPTAIN SLOG
+// vim: set expandtab tabstop=4 shiftwidth=4 autoindent smartindent:
+// File         : custom_exception.php
+// System       : new toolset/boilerplate
+// Date         : May 19 2015
+// Author       : Mark Addinall
+// Synopsis     : Allows the coder to implement custom exceptions in the
+//                PHP code not only for error trapping but to enable
+//                some pseudo RTOS exception driven scheduling system
+//                to be used with incoming AJaX alarms, semaphores
+//                and monitors.
+//
+//                 Adapted to the USM system 17 April 2016.
+//
 
-## CAPTAIN SLOG
-## vim: set expandtab tabstop=4 shiftwidth=4 autoindent smartindent:
-## File         : 
-## System       :
-## Date         : May 19 2015
-## Author       : Mark Addinall
-## Synopsis     :
-##               
-##              
-##             
-##
-## -------------------------------
+
+
+// -------------------------------
 interface IException
 {
     /* Protected methods inherited from Exception class */
@@ -27,7 +32,9 @@ interface IException
     public function __construct($message = null, $code = 0);
 }
 
-abstract class CustomException extends Exception implements IException
+
+//--------------------------------------------------------------------
+abstract class custom_exception extends Exception implements IException
 {
     protected $message = 'Unknown exception';     // Exception message
     private   $string;                            // Unknown
@@ -36,6 +43,7 @@ abstract class CustomException extends Exception implements IException
     protected $line;                              // Source line of exception
     private   $trace;                             // Unknown
 
+    //----------------------------------------------------
     public function __construct($message = null, $code = 0)
     {
         if (!$message) {
@@ -43,7 +51,8 @@ abstract class CustomException extends Exception implements IException
         }
         parent::__construct($message, $code);
     }
-   
+
+    //--------------------------
     public function __toString()
     {
         return get_class($this) . " '{$this->message}' in {$this->file}({$this->line})\n"
